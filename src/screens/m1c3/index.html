@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/required/jquery.js"></script>
+	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="src/screens/m1c3/style.css">
+	<script type="text/javascript" src="src/screens/m1c3/script.js"></script>
+	<script type="text/javascript" src="js/required/jquery.preload.js"></script>
+	<script>	
+	var imgs = [
+		'assets/images/screens/module_1/aa015-01.jpg',		
+	];
+	
+	$.preload(imgs, {
+		each: function (count) {
+		   
+		},
+		all: function () {			
+			$('.activityContainer').fadeIn(200);					  
+		}  
+	});			
+	</script>
+</head>
+<body>
+	<div class="activityContainer" style="display:none">
+		<div class="content" style="overflow:hidden">
+			<div class='panel'>
+				<div class="text-content">
+						<h1 class="title-text">Overview</h1>				
+						<div class="primary-text">
+							<p>The goal of this primer is to give you the tools to understand the language of accountants, controllers and financial managers.</p>
+							<p>After having worked through this simulation, you should be able to understand how your decisions affect your organisation’s financial risk and value creation. You will understand why issues like inventory policy or development times are financially important. </p>
+						</div>
+						<button data-Id='0' class="tour btn-text clickable">TOUR INTERFACE</button>
+				</div>
+				
+			</div>
+			<div class="pop_up animated" style="position: absolute; top: 20px; left: 12px;">
+					<div class="pop_up_container" style="width: 300px; padding: 24px;">
+						<div class="pop_up_content">	
+							<h3 class="pop_up_title">Menu Button</h3>
+							<div class="pop_up_content primary-text">This button reveals the FAST Primer menu. Pages and activities will unlock as you make your way through the course. Upon completing the Primer, you may return to any previous pages as you please.</div>
+						</div>
+						<div class="pop_up_actions">
+							<button data-Id='1' class="next btn-text clickable">Next</button>
+						</div>
+					  
+					</div>
+					<div class="arrow-container up">
+						<div class="arrow-border"></div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+		</div>
+	</div>
+	
+</body>
+</html>

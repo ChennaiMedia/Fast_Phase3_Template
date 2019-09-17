@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/required/jquery.js"></script>
+	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="src/screens/m1c4/style.css">
+	<script type="text/javascript" src="src/screens/m1c4/script.js"></script>
+	<script type="text/javascript" src="js/required/jquery.preload.js"></script>
+	<script>	
+	var imgs = [
+		'assets/images/screens/module_1/aa020-01.jpg',
+		'assets/images/screens/module_1/aa020-02.jpg'	
+	];
+	
+	$.preload(imgs, {
+		each: function (count) {
+		   
+		},
+		all: function () {			
+			$('.activityContainer').fadeIn(200);					  
+		}  
+	});			
+	</script>
+</head>
+<body>
+	<div class="activityContainer explore" style="display:none">
+		<div class="content1">
+			<div class="panel_1">
+				<h1 class="title-text">The Journey Ahead</h1>
+				<div class="primary-text">
+					<p>All managerial decisions, in whatever department, affect an organisation’s financial health. </p>
+				</div>
+				<div class="directions-text">
+					<p>Select each item to learn more.</p>
+				</div>
+			</div>
+						<div class="node-holder holder">
+							<div data-ui="nodes" class="node clickable" data-index="0">
+								<div class="node-wrapper">
+									<div class="label-holder">
+									  <h2 class="node-label">
+										In this Primer, you will
+									  </h2>
+									</div>
+									<div class="node-content">
+										<div class="primary-text">
+											<ul>
+												<li><p>Start a fictitious sailboat company, Aquasail, and run it as shareholder-manager for two years.</p></li>
+												<li><p>Raise cash from different sources for investments and for running the daily operations.</p></li>
+												<li><p>Develop quarterly cash flow and income statements, based upon Aquasail’s activities.</p></li>
+												<li><p>Develop annual balance sheets.</p></li>
+												<li><p>Analyse the annual financial statements to understand Aquasail’s short term and long term financial risk, and its profitability.</p></li>
+												<li><p>Suggest actions to improve Aquasail’s overall financial health.</p></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="graphic-holder background-graphic">
+								  <div style="background-image: url('assets/images/screens/module_1/aa020-01.jpg')" class="graphic"></div>
+								</div>
+							</div>
+							<div data-ui="nodes" class="node clickable" data-index="1">
+								<div class="node-wrapper">
+									<div class="label-holder">
+									  <h2 class="node-label">
+										By the end of this Primer, you will
+									  </h2>
+									</div>	
+									<div class="node-content">
+										<div class="primary-text">
+											<ul>
+												<li><p>Have a broad understanding of an organisation’s financial statements: balance sheet, income statement and cash flow statement and how they fit together.</p></li>
+												<li><p>Understand how operational decisions impact an organisation’s financial statements.</p></li>
+												<li><p>Be able to analyse an organisation’s short term and long term financial risk, based upon its financial statements.</p></li>
+												<li><p>Be able to analyse a firm’s profitability and understand its different components.</p></li>
+											</ul>
+										</div>
+									</div>
+								</div>						  
+								<div class="graphic-holder background-graphic">
+								  <div style="background-image: url('assets/images/screens/module_1/aa020-02.jpg')" class="graphic"></div>
+								</div>
+							</div>
+						</div>
+		</div>
+	</div>
+	
+</body>
+</html>

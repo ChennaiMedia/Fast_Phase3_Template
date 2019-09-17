@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fast Workbook</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/required/jquery.js"></script>
+	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/required/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/required/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script> 
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/zoomPan.js"></script>
+	<!-- <script language="javascript" src="js/APIWrapper.js"></script> -->
+	
+	<link rel="stylesheet" href="css/required/bootstrap.min.css">
+	<link rel="stylesheet" href="css/required/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="css/required/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	
+	<div class="mainContainer">
+		<div class="course-loader" id="course-loader"><img class='flower_img' src="assets/images/loader.gif"></div>
+		<div class="menuListContainer">
+			<div class="menuList_subContain">
+				<div class="menu-overlay"></div>
+				<div class="menu_wrapper"></div>
+			</div>
+		</div>
+		<nav id="header" class="navigation nav_header">
+			<button id="btn_home" class="overlay-btn btn_icon clickable nav-button" type="button" aria-label="menu">
+				<span class="line line-01"></span>
+				<span class="line line-02"></span>
+				<span class="line line-03"></span>
+			</button>
+			<button id="btn-workbook" data-class="innerWorkbook" type="button" class="overlay-btn btn-icon clickable nav-button"></button>
+			<button id="btn-aquasail" data-class="aquasail" type="button" class="overlay-btn btn-icon clickable nav-button"></button> 
+			
+					
+			<div id="progress">
+				<div class="progress-wrapper">
+					<div id="s1" class="section incomplete ">
+						<h3 class="section-label">
+							<span class="line line-01"></span>S<span class="completion"></span>
+							<span class="line line-02"></span>
+						</h3>
+						<div id='n1' class="sub-section in-progress"></div>
+						<div id='n2' class="sub-section incomplete"></div>
+					</div>
+					<div id="s2" class="section  incomplete ">
+						<h3 class="section-label">
+							<span class="line line-01"></span>Y-1<span class="completion"></span>
+							<span class="line line-02"></span>
+						</h3>
+						<div id='n3_1' class="les_sec sub-section incomplete"></div>
+						<div id='n3_2' class="les_sec sub-section incomplete"></div>
+						<div id='n3_3' class="les_sec sub-section incomplete"></div>
+						<div id='n3_4' class="les_sec sub-section incomplete"></div>
+					</div>
+					<div id="s3" class="section  incomplete ">
+						<h3 class="section-label">
+							<span class="line line-01"></span>T<span class="completion"></span>
+							<span class="line line-02"></span>
+						</h3>
+						<div id='n4' class="sub-section incomplete"></div>
+						<div id='n5' class="sub-section incomplete"></div>
+					</div>
+					<div id="s4" class="section  incomplete ">
+						<h3 class="section-label">
+							<span class="line line-01"></span>Y-2<span class="completion"></span>
+							<span class="line line-02"></span>
+						</h3>
+						<div id='n6_1' class="les_sec sub-section incomplete"></div>
+						<div id='n6_2' class="les_sec sub-section incomplete"></div>
+						<div id='n6_3' class="les_sec sub-section incomplete"></div>
+						<div id='n6_4' class="les_sec sub-section incomplete"></div>
+					</div>
+					<div id="s5" class="section  incomplete ">
+						<h3 class="section-label">
+							<span class="line line-01"></span>T<span class="completion"></span>
+							<span class="line line-02"></span>
+						</h3>
+						<div id='n7' class="sub-section incomplete"></div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="page_holder">
+			<!-- <div id="p_0001" class="page"> -->
+				<!-- <div class="content_wrapper"> -->
+					<!-- <div class="content"></div> -->
+				<!-- </div> -->
+			<!-- </div> -->
+		</div>
+		<div class="zoompan"></div>
+		<button id="nav_prevBtn" class="nav_prevNextBtn prevBtn_clickable" type="button" name="previous"></button>
+		<button id="nav_nextBtn" class="nav_prevNextBtn nextBtn_clickable" type="button" name="next"></button>
+		
+		<div class="overlay">
+			<div class="innerWorkbook">
+				<div class="workbookHeader">
+					<div class="wiconbutton">
+						<img class="sheet-icon child" src="assets/images/icon-workbook-b.svg">
+						<h3 class="sheet-title child">B</h3>
+						<div class="sheet-sub-holder child">          
+						  <div class="sub-item child" data-sheet="B">S</div>
+						  <div class="sub-item child" data-sheet="B">Y1</div>
+						  <div class="sub-item child" data-sheet="B">Y2</div>
+						</div>
+					</div>
+					
+					<div class="wiconbutton">
+						<img class="sheet-icon child" src="assets/images/icon-workbook-cf.svg">
+						<h3 class="sheet-title child">CF</h3>
+						<div class="sheet-sub-holder child">          
+						  <div class="sub-item child" data-sheet="CF">S</div>
+						  <div class="sub-item child" data-sheet="CF">Y1</div>
+						  <div class="sub-item child" data-sheet="CF">Y2</div>
+						</div>
+					</div>
+					
+					<div class="wiconbutton">
+						<img class="sheet-icon child" src="assets/images/icon-workbook-bs.svg">
+						<h3 class="sheet-title child">BS</h3>
+						<div class="sheet-sub-holder child">          
+						  <div class="sub-item child" data-sheet="BS">S</div>
+						  <div class="sub-item child" data-sheet="BS">Y1</div>
+						  <div class="sub-item child" data-sheet="BS">Y2</div>
+						</div>
+					</div>
+					
+					<div class="wiconbutton">
+						<img class="sheet-icon child" src="assets/images/icon-workbook-pl.svg">
+						<h3 class="sheet-title child">PL</h3>
+						<div class="sheet-sub-holder child">          						 
+						  <div class="sub-item child" data-sheet="PL" data-version="Y1">Y1</div>
+						  <div class="sub-item child" data-sheet="PL" data-version="Y2">Y2</div>
+						</div>
+					</div>
+					
+					<div class="wiconbutton">
+						<img class="sheet-icon child" src="assets/images/icon-workbook-l.svg">
+						<h3 class="sheet-title child">L</h3>
+						<div class="sheet-sub-holder child">          						  
+						  <div class="sub-item child" data-sheet="L" data-version="Y1">Y1</div>
+						  <div class="sub-item child" data-sheet="L" data-version="Y2">Y2</div>
+						</div>
+					</div>
+					
+					<div class="wiconbutton">
+						<img class="sheet-icon child" src="assets/images/icon-workbook-p.svg">
+						<h3 class="sheet-title child">P</h3>
+						<div class="sheet-sub-holder child">          						  
+						  <div class="sub-item child" data-sheet="P" data-version="Y1">Y1</div>
+						  <div class="sub-item child" data-sheet="P" data-version="Y2">Y2</div>
+						</div>
+					</div>
+					
+					<div class="wiconbutton">
+						<img class="sheet-icon child" src="assets/images/icon-workbook-s.svg">
+						<h3 class="sheet-title child">S</h3>
+						<div class="sheet-sub-holder child">          						  
+						  <div class="sub-item child" data-sheet="S" data-version="Y1">Y1</div>
+						  <div class="sub-item child" data-sheet="S" data-version="Y2">Y2</div>
+						</div>
+					</div>
+					<div id="pdfDownload" class="btn-download-pdf btn-icon-pdf"></div>
+					<button id="closeOverlay" type="button" class="btn-close-wbook btn-icon-wbook"></button>
+				</div>
+				<div class="workbook-viewer">
+														
+				</div>
+			</div>
+			
+			<div class="aquasail">
+				<img src="assets/images/aquasail-overlay-bg.png" class="aquasilBg"/>
+				<h1 class="h1aquasil boldLato">AQUASAIL</h1>
+				<button id="closeAquasil" type="button" class="btn-close-wbook btn-icon-wbook"></button>
+				<div class="interface-elements">
+					<h3>Icon Legend</h3>
+					<div class="global key">
+						<div class="item-icon"><span class="plus" style="background-color: rgb(152, 29, 151);"></span><span class="minus" style="background-color: rgb(152, 29, 151);"></span></div>
+						<h4>Global State</h4>
+					</div>
+					<div class="recent key">
+						<div class="item-icon"><span class="plus" style="background-color: #ff6a13"></span><span class="minus" style="background-color: #ff6a13"></span></div>
+						<h4>Recent State</h4>
+					</div>
+				</div>
+				<div class="hotspot-holder"></div>
+			</div>				
+		</div>	
+		<div class="welcome_container">
+			<div class="welcome_text combined">
+				<div class="content-holder">
+					<h1><span class="text-large">WELCOME</span> TO THE VLERICK FAST PRIMER</h1>
+					<div class="panel-body">
+						<p></p>
+						<p>Finance and accounting simulation tool</p>
+						<p></p>
+					</div>
+					<button type="button" class="btn-continue btn-text clickable">LET'S GET STARTED</button>
+						<svg class="svg-angle" xmlns="http://www.w3.org/2000/svg" width="157" height="100%" preserveAspectRatio="none" viewBox="0 0 157.3 372"><path d="M157.3 372H0V0z"></path></svg>
+				</div>
+				<img class="client-logo" src="assets/images/vlerick-logo.svg">
+			</div>
+			<div class="yellow-angle-large angle"></div>
+			<div class="yellow-angle-small angle"></div>
+		</div>
+		<div id="portrait-warning-holder">
+			<div class="portrait-warning">
+				<div class="portrait-warning-prompt">
+					<p>This course can only be viewed in landscape mode.</p>
+					<p>Please rotate your device.</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<script>
+		$.holdReady(true);
+		var preloadComplete=false;
+		$.getScript("./js/required/preloadjs-0.6.2.min.js", function() {
+			$.holdReady(false);
+			manifest = [
+				"assets/images/vlerick-logo.svg",
+				"assets/images/simulation/vlerick-splash.svg" 
+			];
+			preload = new createjs.LoadQueue(true);
+			preload.addEventListener("progress", function() {
+				//console.log('Updating preloading progress...'+Math.round(preload.progress*100)+"%");
+			});
+			preload.addEventListener("complete", function(){
+				setTimeout(function(){
+					$('#course-loader').hide()
+					$('.welcome_container').css('display','flex')
+				},100)
+			});
+			preload.setMaxConnections(5);
+			preload.loadManifest(manifest);
+		});
+	
+	</script>
+	<script type="text/javascript" src="js/required/preloadjs-0.6.2.min.js"></script>
+</body>
+</html>

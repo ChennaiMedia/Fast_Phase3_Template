@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.85 26.85">
+  <title>btn-close</title>
+  <g>
+    <line x1="0.71" y1="26.15" x2="26.15" y2="0.71" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <line x1="26.15" y1="26.15" x2="0.71" y2="0.71" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

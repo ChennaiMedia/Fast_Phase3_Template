@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/required/jquery.js"></script>
+	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="src/screens/m1c5/style.css">
+	<script type="text/javascript" src="src/screens/m1c5/script.js"></script>
+	<script type="text/javascript" src="js/required/jquery.preload.js"></script>
+	<script>	
+	var imgs = [
+		'assets/images/screens/module_1/aa030-01.jpg',
+		'assets/images/screens/module_1/aa030-02.png'	
+	];
+	
+	$.preload(imgs, {
+		each: function (count) {
+		   
+		},
+		all: function () {			
+			$('.activityContainer').fadeIn(200);					  
+		}  
+	});			
+	</script>
+</head>
+<body>
+	<div class="activityContainer color" data-key="enter" data-active='0' style="display:none" data-active="1">
+		<div class="montage-nav">
+			<div data-ui="arrowLeft" data-arrow="left" class="arrow prev-arrow clickable disabled">
+				<svg xmlns="http://www.w3.org/2000/svg" width="29.1" height="19.6">
+				  <path d="M13.5.4L1 11.7c-.6.6-1 1.4-1 2.3v4.9c0 .8.5 1 1 .5L13.5 8.7c.6-.5 1.5-.5 2.1 0l12.5 10.7c.6.5 1 .3 1-.5V14c-.1-.9-.4-1.7-1-2.3L15.6.4c-.6-.5-1.5-.5-2.1 0z" fill="#fff"></path>
+				</svg>
+			</div>
+			<div class="dots">
+				<span data-ui="dots" class="dot active" data-index="0">1</span>                 
+                <span data-ui="dots" class="dot" data-index="1">2</span>
+				<span data-ui="dots" class="dot" data-index="2">3</span>
+				<span data-ui="dots" class="dot" data-index="3">4</span>
+				<span data-ui="dots" class="dot" data-index="4">5</span>
+            </div>
+            <div data-ui="arrowRight" data-arrow="right" class="arrow next-arrow clickable">
+				<svg xmlns="http://www.w3.org/2000/svg" width="29.1" height="19.6">
+                  <path d="M15.6 19.2L28.1 7.9c.6-.6 1-1.4 1-2.3V.7c0-.8-.5-1-1-.5L15.6 10.9c-.6.5-1.5.5-2.1 0L1 .3C.5-.2 0 0 0 .7v4.8c.1.9.4 1.7 1 2.3l12.5 11.3c.6.6 1.5.6 2.1.1z" fill="#fff"></path>
+				</svg>
+            </div>
+        </div>
+		<div data-ui="stepInner" class="step-holder-inner" >
+                <!-- callout node type HTML -->
+                  <!-- single node type HTML -->
+                <div data-ui="steps" class="step active" data-index="0" data-type="single">
+					<div class="montage-text-cont">
+						<div class="montage-text-holder">
+							<div class="montage-text">
+								<h3 class="montage-title">HOW TO USE THIS PRIMER</h3>
+								<div class="inner-text">
+									<p><b>You will need to spend at least four to five hours working through this Primer, ideally in one session</b>. There are two main components to this Primer: the <b>Aquasail simulation</b> and the <b>FAST workbook</b>.</p>
+									<p>As you will be interacting with a simulation in this Primer, we recommend that you use a larger size screen or monitor to view it, and expand the browser window to full size.</p>
+									<p><b>Use the arrows on the left side of the screen to learn more.</b>  </p>
+								 </div>
+							</div>
+						</div>
+						<img src="assets/images/screens/module_1/aa030-02.png" class="montage-graphic">
+					</div>
+                </div>
+                <!-- callout node type HTML -->
+                  <!-- single node type HTML -->
+                <div data-ui="steps" class="step next" data-index="1" data-type="single">
+					<div class="montage-text-cont">
+						<div class="montage-text-holder">
+							<div class="montage-text">
+								<h3 class="montage-title">
+								  PLAYING AN ACTIVE PART
+								</h3>
+								  <div class="inner-text">
+									<p>You must pay close attention and think carefully about what you are being taught and what you are being asked to do, as by the end of this Primer you need to be able to understand and fill in a cash statement and a profit-and-loss statement, calculate ratios, and perform other basic accounting tasks. </p>
+									<p>So don't expect to just sit back and be fed information - you are expected to play a very active part in your learning! We strongly recommend that you have a notepad beside you and take notes throughout, to help you remember the concepts and ratios you will encounter.  </p>
+								  </div>
+							</div>
+						</div>
+						<img src="assets/images/screens/module_1/aa030-03.png" class="montage-graphic">
+					</div>
+                </div>                
+                <!-- callout node type HTML -->
+                  <!-- single node type HTML -->
+                <div data-ui="steps" class="step" data-index="2" data-type="single">
+					<div class="montage-text-cont">
+						<div class="montage-text-holder">
+							<div class="montage-text">
+								<h3 class="montage-title">
+								  THE AQUASAIL SIMULATION
+								</h3>
+								  <div class="inner-text">
+									<p>The Aquasail simulation enables you to physically move cash and resources through the Aquasail business, and to track cash inflows and outflows over the first two years of its operation. On the next screen you'll work through a short tutorial before you work with the simulation itself, to familiarise you with the basic functionality and layout. You will visit the Aquasail simulation on numerous pages. Each time you will make moves of cash and/or resources. </p>
+								  </div>
+							</div>
+						</div>
+						<img src="assets/images/screens/module_1/aa030-04.png" class="montage-graphic">
+					</div>
+                </div>
+                <!-- callout node type HTML -->
+                  <!-- single node type HTML -->
+                <div data-ui="steps" class="step" data-index="3" data-type="single">
+					<div class="montage-text-cont">
+						<div class="montage-text-holder">
+							<div class="montage-text">
+								<h3 class="montage-title">
+								  THE FAST WORKBOOK
+								</h3>
+								  <div class="inner-text">
+									<p>Every time you move cash in the Aquasail business you will record this transaction in the on-screen FAST workbook. This workbook contains the basic financial and accounting documents needed to run the business. You may also want to download a blank version of the workbook (available in the menu and the workbook overlay) and print it out so you can see all the financial documents together.</p>
+									<p>Physically moving cash and resources in the Aquasail simulation will enable you to see visually how a business works. Updating the FAST workbook each time will enable you to understand how each transaction is recorded in the accounting documents. So by the end of this Primer you will have a strong understanding of the relationship between the financial transactions that occur within a business and how these are recorded.</p>
+								  </div>
+							</div>
+						</div>
+						<img src="assets/images/screens/module_1/aa030-06.png" class="montage-graphic">
+					</div>
+                </div>
+                <!-- callout node type HTML -->
+                  <!-- single node type HTML -->
+                <div data-ui="steps" class="step text-left" data-index="4" data-type="single">
+					<div class="montage-text-cont">
+						<div class="montage-text-holder">
+							<div class="montage-text">
+								<h3 class="montage-title">
+								  MINI-LECTURES
+								</h3>
+								  <div class="inner-text">
+									<p>Along the way you will also receive a number of mini-lectures on key finance and accounting concepts, as well as in-depth lectures on how to analyse the data you have recorded in your FAST workbook.</p>
+									<p>Screens that include video lectures will have an icon like the one shown on the right.</p>
+								  </div>
+							</div>
+						</div>
+						<img src="assets/images/screens/module_1/aa030-07.png" class="montage-graphic">
+					</div>
+                </div>
+         </div>
+	</div>
+	
+</body>
+</html>
