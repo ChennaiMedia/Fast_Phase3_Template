@@ -140,8 +140,10 @@ p:last-child {
             transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); 
 }
 .player {
-position:absolute;
-top:0px;
+	position:absolute;
+	top:0px;
+	z-index:1;
+	display:none;
 }
 @-webkit-keyframes fadeIn {
   0% {

@@ -473,7 +473,7 @@ function errorPop(){
 function childAnim(sel){	
 	rightSprite = $('#'+sel);	
 	rightSprite.stop().animate({
-		transform: 'translate(0px,7px)'
+		transform: 'translate(0px,-7px)'
 	},300,function(){
 		rightSprite.stop().animate({
 			transform: 'translate(0px, 0px)'
