@@ -46,8 +46,8 @@ var aquaLegends = {
 	},
 	accspay:{
 		txt:'Accounts Payable',
-		lpos:1440,
-		tpos:1450,		
+		lpos:1450,
+		tpos:1420,		
 		visit:false
 	},
 	bankdt:{
