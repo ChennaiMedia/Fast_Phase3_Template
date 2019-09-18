@@ -559,6 +559,16 @@ html,body{
 	transform: rotate(-32deg) skewX(-30deg);
     width: 45px;
 }
+.equityPost{
+	position:absolute;
+	top:1286px;
+	left:1775px;
+	display:none;	
+}
+.equityPost img{
+	transform: rotate(-32deg) skewX(-30deg);
+    width: 45px;
+}
 .cashCoins{
 	position:absolute;
 	width:400px;
@@ -755,7 +765,7 @@ html,body{
 	top:820px;
 	width:368px;
 	height:359px;
-	background-image:url(../../../../assets/images/simulation/shareholds_sprite.png);
+	background-image:url(../../../../assets/images/simulation/shareholds_sprite_a2.png);
 	background-position:0px 0px;
 }
 #banksprite_13{

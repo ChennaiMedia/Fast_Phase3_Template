@@ -53,11 +53,11 @@
 		C2288.8,1744.5,2271.9,1725.1,2266.9,1721.2z"/>
 </g>
 
-<g id="cash" data-value="Cash" data-label="cash" data-dual="none">
+<g id="cash" data-value="Cash" data-label="cash" data-dual="none" transform="translate(20,0)">
 	<polygon class="cash_6"  data-common="commonSprite" points="1751.5,1642.9 1979.8,1489.1 2084.2,1557.4 1856.5,1714"/>
 </g>
 
-<g id="post" data-value="Post-it" data-label="post" data-dual="none">
+<g id="post" data-value="Post-it" data-label="post" data-dual="none" transform="translate(10,0)">
 	<polygon class="post_7"  data-common="commonSprite" points="2140,1400.4 2197.9,1361.1 2258.1,1398.7 2258.1,1417.5 2200.9,1457.3 2140,1419.9"/>
 </g>
 

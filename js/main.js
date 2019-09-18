@@ -130,7 +130,7 @@ var getStart = function(){
 	}else{
 		$(".page_holder").load('src/screens/m1c1/index.html');
 	}
-	//all_function()//option delete
+	all_function()//option delete
 }
 /*----------Menu Button Click function----------*/
 var menuBtnClickFun = function(){
@@ -209,8 +209,8 @@ var menuListCreation = function(FWBdata){
 	$(".nextBtn_clickable").off('click').on('click',nav_nextClkFun);
 }
 function all_function(){
-	$("#chapter_list_"+(modNo-1)).find('.chapter').removeClass("subMenu_NotClick").addClass('subMenu_Clickable');//option
-	//$(".chapter_list").find('.chapter').removeClass("subMenu_NotClick").addClass('subMenu_Clickable');//option
+	//$("#chapter_list_"+(modNo-1)).find('.chapter').removeClass("subMenu_NotClick").addClass('subMenu_Clickable');//option
+	$(".chapter_list").find('.chapter').removeClass("subMenu_NotClick").addClass('subMenu_Clickable');//option
 	$(".lesson_list").find('.lesson').removeClass("lesson_NotClick").addClass('lesson_Clickable');//option 
 	$(".module_list").removeClass("menu_NotClick").addClass('menu_Clickable');//option 
 	$(".menu_Clickable").off('click').on('click',menuClickFun);
