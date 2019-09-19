@@ -175,7 +175,7 @@ $(document).ready(function(){
 	$('#audiobg').trigger('play');	
 	$('.zoompan').css('display','block');	
 	$('#map-btn').css('background-color','#981d97');
-	
+	$('#map-btn').removeClass('animating');	
 	var ovrlayH = docInnerHeight-standardTop;		
 	$('.aquasilCont').css('height',ovrlayH+"px");
 });

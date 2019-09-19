@@ -672,6 +672,7 @@ function top_navigation()
 				$("#n"+modNo+"_"+chapNo).removeClass('in-progress').addClass('complete');
 				$("#lesson_list"+(modNo-1)+"_"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo)+"_"+(chapNo+1)).addClass('in-progress').removeClass('incomplete');
 			}
+
 		}
 		else{
 			$("#chapter_list_"+(modNo-1)).find('.chapter').each(function(i){
@@ -682,6 +683,7 @@ function top_navigation()
 			{
 				$("#n"+modNo).removeClass('in-progress').addClass('complete');
 				$("#m"+(modNo)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete');
+				console.log(modNo,chapNo,lesNo,$("#m"+(modNo)+"c"+(chapNo-1)).next().length==0)
 			}	
 		}
 		if(completestage)
@@ -712,13 +714,15 @@ function recover_data(data)
 	var scrNo = Id[3];
 	var lesScrNo = Id[5];
 	
+	lesScrNo=isNaN(lesScrNo)?lesScrNo=0:'';
+	console.log(lesScrNo)
 	moduleNo = Number(moduleNo)+1;
 	scrNo = Number(scrNo)+1;
 	lesScrNo = Number(lesScrNo)+1;
 	modNo = moduleNo;
 	chapNo = scrNo; 
 	lesNo =	lesScrNo;
-	
+	console.log(Id,modNo,chapNo,lesNo)
 	for(var i=0;i<modNo;i++){
 		$(".module_list").eq(i).removeClass("menu_NotClick").addClass('menu_Clickable');
 		for(var j=0;j<chapNo;j++){
@@ -764,6 +768,7 @@ function recover_data(data)
 			var chptest=chapNo-1;
 			var lestest=lesNo-1;
 			var trunc=isNaN(lestest)?false:true;
+			//var lesNo=isNaN(lestest)?lesNo=0:lesNo;
 			StepComplet();
 			function StepComplet(){
 				for(var i=0;i<=modtest;i++){
@@ -789,6 +794,7 @@ function recover_data(data)
 			}
 		//navigation-fill
 		for(var i=1;i<=modNo;i++){
+		
 			for(var j=1;j<chapNo;j++){
 			
 				$("#n"+i+"_"+j).removeClass('in-progress').addClass('complete');
@@ -802,7 +808,9 @@ function recover_data(data)
 			}
 			$("#n"+i+"_"+j).addClass('in-progress').removeClass('incomplete');
 			$("#n"+(i-1)).removeClass('in-progress').addClass('complete');
-			$("#n"+(i)).addClass('in-progress').removeClass('incomplete')
+			$("#n"+(i)).addClass('in-progress').removeClass('incomplete');
+			console.log("modNo",modNo,chapNo,lesNo)
 		}
+		
 		
 }
