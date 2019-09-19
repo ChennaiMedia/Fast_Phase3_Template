@@ -107,17 +107,16 @@ $(document).ready(function(){
 window.onload = function(){			
 	docInnerHeight = $(document).innerHeight();		
 	var ovrlayH = docInnerHeight-standardTop;		
-	$('.overlay,.overlayAquasil').css('height',ovrlayH+"px");			
+	$('.overlay,.overlayAquasil,.aquasilCont').css('height',ovrlayH+"px");			
 	$(window).on('resize', goWindowResize);			
-	showZoomNav();
-	
+	showZoomNav();	
 	$('.aquasilBg').mousedown(function(e){e.preventDefault()})
 }
 
 function goWindowResize(){	
 	docInnerHeight = $(document).innerHeight();
 	var ovrlayH = docInnerHeight-standardTop;
-	$('.overlay,.overlayAquasil').css('height',ovrlayH+"px");
+	$('.overlay,.overlayAquasil,.aquasilCont').css('height',ovrlayH+"px");
 	if(isAquasil) canvasResize();	
 }
 

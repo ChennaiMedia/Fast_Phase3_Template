@@ -133,7 +133,10 @@ $(document).ready(function(){
 	document.body.appendChild(sound);
 	$('#audiobg').trigger('play');	
 	$('.zoompan').css('display','block');	
-	$('#map-btn').css('background-color','#981d97');
+	$('#map-btn').css('background-color','#981d97');	
+	
+	var ovrlayH = docInnerHeight-standardTop;		
+	$('.aquasilCont').css('height',ovrlayH+"px");
 });
 
 function cursorMoving(e){	

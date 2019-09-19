@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
-	
+	$('#nav_nextBtn').removeClass('nav_nextBtnUp');
+	$('#nav_prevBtn').removeClass('nav_prevBtnUp');
 	$('.activityContainer').fadeIn();
 	$('.video-btn').mouseenter(function(){
 		$(this).addClass('over');
@@ -9,8 +10,8 @@ $(document).ready(function(){
 		$('.video-btn').removeClass('over');
 	})
 	$('.video-btn').on('click',function(){	
-		$('#nav_nextBtn').css({'bottom': '120px'});
-		$('#nav_prevBtn').css({'bottom': '135px'});
+		$('#nav_nextBtn').addClass('nav_nextBtnUp');
+		$('#nav_prevBtn').addClass('nav_prevBtnUp');
 		$('.player').show();
 		document.getElementById('jp_video_0').play();
 		complete_page()

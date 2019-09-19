@@ -50,7 +50,7 @@ var aquaSteps = {
 		feedback:'no',
 		questPanel:'yes',
 		stayScreen:'no',
-		clickelem:'asslines1sprite_5',
+		clickelem:'suplssprite_1',
 		customCursor:'no',
 		updateArea:'no',
 		customCursorSel:'',
@@ -175,6 +175,9 @@ $(document).ready(function(){
 	$('#audiobg').trigger('play');	
 	$('.zoompan').css('display','block');	
 	$('#map-btn').css('background-color','#981d97');
+	
+	var ovrlayH = docInnerHeight-standardTop;		
+	$('.aquasilCont').css('height',ovrlayH+"px");
 });
 
 function cursorMoving(e){	

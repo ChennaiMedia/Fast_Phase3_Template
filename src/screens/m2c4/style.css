@@ -4,12 +4,14 @@
 	height:100%;
 	display:flex;
 	align-items:center;
-	background: url(../../../assets/images/screens/module_2/ba010-01.jpg) no-repeat center center;
+	background: url(../../../assets/images/screens/module_2/ba040-01.jpg) no-repeat center center;
 	background-size:cover;
     top: 48px;
     height: calc(100% - (48px + 0px));
 	display:none;
 }
+.nav_nextBtnUp{bottom: 120px !important}
+.nav_prevBtnUp{bottom: 135px !important}
 .content::before {
     background: #981d97;
 }
@@ -42,6 +44,7 @@
     padding: 24px;
     background: -webkit-gradient(linear, left top, right top, from(#2a2867), to(#981d97));
     background: linear-gradient(to right, #2a2867 0%, #981d97 100%);
+	border: none;
 }
 .title-text{
 	padding-right: 75px;
