@@ -8,7 +8,6 @@ var zoomLevel = 0;
 var zoomVal = 0;
 var oneTimeSet = true;
 var scalePos = 0;
-var oneloadset = true;
 var sprite;
 var spriteAnimator;	
 var rightSprite;
@@ -46,7 +45,7 @@ var aquaValues = {
 var aquaSteps = {
 	step_0:{
 		text:'<h3>Ready? Let’s start! </h3><p>It’s January 1. The first financial action Aquasail takes is to issue shares, representing the equity of Aquasail. Shareholders own the business. You will invest 14000 of your own savings in the company in return for all the shares of Aquasail. You invest that money on Aquasail’s newly opened bank account, which we label “Cash” in the simulation. </p>',
-		questTxt:'First move 14000 in money tokens from the shareholders to Cash.',
+		questTxt:'First move 14000 in money tokens from the Shareholders to Cash.',
 		feedback:'no',
 		questPanel:'yes',
 		stayScreen:'no',
@@ -65,7 +64,7 @@ var aquaSteps = {
 	},
 	step_1:{
 		text:'<h3>Well Done!</h3><p>You successfully moved the tokens from Shareholders.</p>',
-		questTxt:' Now select the post-it pad and write 14000 on a post-it. Move the post-it with 14000 written on it to Equity. This will help you to remember where the money came from.',
+		questTxt:'Now select the post-it pad and write 14000 on a post-it. Move the post-it with 14000 written on it to Equity. This will help you to remember where the money came from.',
 		feedback:'yes',
 		questPanel:'yes',
 		stayScreen:'no',
