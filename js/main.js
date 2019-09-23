@@ -662,7 +662,7 @@ function rgb2hex(rgb) {
 
 function top_navigation()
 {
-console.log("chapNo",chapNo)
+
 		if($("#m"+(modNo-1)+"c"+(chapNo-1)).next().hasClass('lesson_list')){
 			$("#lesson_list"+(modNo-1)+"_"+(chapNo-1)).find('.lesson').each(function(i){
 					if($(this).hasClass('completed'))completestage=true;
@@ -673,9 +673,9 @@ console.log("chapNo",chapNo)
 				$("#n"+modNo+"_"+chapNo).removeClass('in-progress').addClass('complete');
 				$("#lesson_list"+(modNo-1)+"_"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo)+"_"+(chapNo+1)).addClass('in-progress').removeClass('incomplete');
 			}
-console.log(modNo,chapNo,lesNo,$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
+
 		}
-		else{console.log("ccccccccccccc")
+		else{
 			$("#chapter_list_"+(modNo-1)).find('.chapter').each(function(i){
 				if($(this).hasClass('completed'))completestage=true;
 				else completestage=false;
@@ -683,8 +683,8 @@ console.log(modNo,chapNo,lesNo,$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0
 			if(completestage)
 			{
 				$("#n"+modNo).removeClass('in-progress').addClass('complete');
-				//$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete');
-				$("#m"+(modNo)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete');
+				$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete');
+				//$("#m"+(modNo)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete');
 				console.log(modNo,chapNo,lesNo,$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
 			}	
 		}
@@ -717,14 +717,14 @@ function recover_data(data)
 	var lesScrNo = Id[5];
 	
 	//lesScrNo=isNaN(lesScrNo)?lesScrNo=0:lesScrNo;
-	console.log("lesScrNo",lesScrNo)
+	//console.log("lesScrNo",lesScrNo)
 	moduleNo = Number(moduleNo)+1;
 	scrNo = Number(scrNo)+1;
 	lesScrNo = Number(lesScrNo)+1;
 	modNo = moduleNo;
 	chapNo = scrNo; 
 	lesNo =	lesScrNo;
-	console.log(Id,modNo,chapNo,lesNo)
+	//console.log(Id,modNo,chapNo,lesNo)
 	for(var i=0;i<modNo;i++){
 		$(".module_list").eq(i).removeClass("menu_NotClick").addClass('menu_Clickable');
 		for(var j=0;j<chapNo;j++){
@@ -753,7 +753,7 @@ function recover_data(data)
 	}
 	hoverClassSetFun();
 	$(".menu_Clickable").off('click').on('click',menuClickFun);
-	console.log($("#m"+(modNo-1)+"c"+(chapNo-1)+"l"+(lesNo-1)).parent().hasClass('lesson_list'))
+
 	if($("#m"+(modNo-1)+"c"+(chapNo-1)+"l"+(lesNo-1)).parent().hasClass('lesson_list')||$("#m"+(modNo-1)+"c"+(chapNo-1)).hasClass('lessonHead'+(modNo-1)+'_'+(chapNo-1))){
 		$(".page_holder").load('src/screens/m'+modNo+'c'+chapNo+'l'+lesNo+'/index.html');
 		setData="m"+(modNo-1)+"c"+(chapNo-1)+"l"+(lesNo-1);
@@ -810,14 +810,14 @@ function recover_data(data)
 			{
 				$("#s4,#s2").find(".les_sec").removeClass('in-progress').addClass('complete');
 			}
-			console.log($("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0,i,j)
+
 			if($("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
 				$("#n"+(i+1)+"_1").addClass('in-progress').removeClass('incomplete');
 			else
 				$("#n"+i+"_"+j).addClass('in-progress').removeClass('incomplete');
 			$("#n"+(i-1)).removeClass('in-progress').addClass('complete');
 			$("#n"+(i)).addClass('in-progress').removeClass('incomplete');
-			console.log("modNo",modNo,chapNo,lesNo,"#n"+i+"_"+j)
+
 		}
 		//navigation-Tick
 			$("#progress .section").each(function(i){

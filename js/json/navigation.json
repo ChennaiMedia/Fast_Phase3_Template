@@ -28,6 +28,36 @@
 						"video":"",
 						"StepsCompleted":false,
 						"lessons":[]
+					},
+					{
+						"title":"What is Ahead",
+						"video":"",
+						"StepsCompleted":false,
+						"lessons":[]
+					},
+					{
+						"title":"How to use this Primer",
+						"video":"",
+						"StepsCompleted":false,
+						"lessons":[]
+					},
+					{
+						"title":"Aquasail Tutorial",
+						"video":"",
+						"StepsCompleted":false,
+						"lessons":[]
+					},
+					{
+						"title":"Workbook Tutorial",
+						"video":"",
+						"StepsCompleted":false,
+						"lessons":[]
+					},
+					{
+						"title":"Meet the Faculty",
+						"video":"",
+						"StepsCompleted":false,
+						"lessons":[]
 					}
 			]
 		},
@@ -44,6 +74,84 @@
 				{
 					"title":"Aquasail Startup",
 					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Cashflow Statement [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Mini-Lecture: Balance Sheet",
+					"video":"ba040-01",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Balance Sheet [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Where to Raise Financing",
+					"video":"ba060-01",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Aquasail",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Cashflow Statement: Bank Debt [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Balance Sheet: Bank Debt [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Sources of Funds",
+					"video":"ba090-01",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Aquasail",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Cashflow Statement: Investments [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Balance Sheet: Investments [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Key Contacts",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Conclusion",
+					"video":"ba120-01",
 					"StepsCompleted":false,
 					"lessons":[]
 				}
@@ -71,6 +179,86 @@
 							"title":"Raw Materials [Workbook]",
 							"video":"",
 							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Labour [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Services [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Sales [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Mini-Lecture: Profit-and-Loss",
+							"video":"ca100-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss Statement [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Depreciation",
+							"video":"ca120-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail's Total Depreciation",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss with Depreciation [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Calculate EBIT [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Understanding Depreciation",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Understanding EBIT",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Key Concepts",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Conclusion",
+							"video":"ca180-01",
+							"StepsCompleted":false
 						}
 					]
 				},
@@ -91,6 +279,86 @@
 							"title":"Raw Materials [Workbook]",
 							"video":"",
 							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Labour [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Services [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Sales [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"EBIT",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Calculate Q2EBIT",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss Statement",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss Statement [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Direct Costs Method",
+							"video":"cb140-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Direct Costs Method [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Calculate EBIT Using Direct Costs Method",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"The Full Cost Method",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Calculate EBIT Using Full Costs Method",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Conclusion & Concepts",
+							"video":"cb180-01",
+							"StepsCompleted":false
 						}						
 					]
 				},
@@ -106,6 +374,56 @@
 							"title":"Aquasail",
 							"video":"",
 							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Cashflow Statement: Labour [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Cashflow Statement: Services [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Cashflow Statement: Sales [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss Statement",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss Statement [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Review",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Conclusion",
+							"video":"cc130-01",
+							"StepsCompleted":false
 						}
 					]
 				},
@@ -120,6 +438,76 @@
 						{
 							"title":"Aquasail",
 							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Cash Statement: Raw Materials [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Cashflow Statement [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Cash Book [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit After Taxes [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Types of Cash Flow",
+							"video":"cd105-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Balance Sheet: Assets [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Balance Sheet: Equity & Liabilities [Workbook]",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"The Balance Sheet in Detail",
+							"video":"",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Conclusion",
+							"video":"cd140-01",
 							"StepsCompleted":false
 						}						
 						
@@ -145,7 +533,52 @@
 					"title":"Current Ratio and Acid Test [Workbook]",
 					"StepsCompleted":false,
 					"lessons":[]
-				}
+				},
+				{
+					"title":"A Dynamic View of Liquidity",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"The Operating Cycle of a Company",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Working Capital",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Examples",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Calculate NWC and WCR [Workbook]",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Lowest WCR",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Liquidity Ratios",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Liquidity Quick Quiz",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Understanding Liquidity",
+					"StepsCompleted":false,
+					"lessons":[]
+				}	
 			]
 		},
 		{
@@ -164,6 +597,66 @@
 				},
 				{
 					"title":"Return on Assets",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Calculate ROA [Workbook]",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Profitability: Quick Quiz",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Return on Equity",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Financial Leverage Effect",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Calculate Financial Leverage Effect [Workbook]",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Calculate ROE [Workbook]",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Return on Equity Quick Quiz",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Benchmarking ROA and ROE",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Benchmarking ROA",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"The Ratios",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Ratios Quick Quiz",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Conclusion",
 					"StepsCompleted":false,
 					"lessons":[]
 				}
@@ -189,6 +682,31 @@
 						},
 						{
 							"title":"Aquasail",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Year 2: Other Changes [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Year 2: Quarter 1",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Cash Statement [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profit-and-Loss Statement [Workbook]",
 							"video":"ca010-01",
 							"StepsCompleted":false
 						}
@@ -254,6 +772,61 @@
 							"title":"Profit-and-Loss Statement [Workbook]",
 							"video":"ca010-01",
 							"StepsCompleted":false
+						},
+						{
+							"title":"Year 2 EBIT [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Aquasail",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Y2 Profit Before Tax [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Taxes [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Cash Balance [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Year End Analysis [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Liquidity Ratios [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Mini-Lecture: Liquidity",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Profitability Ratios [Workbook]",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Mini-Lecture: Profitability",
+							"video":"ca010-01",
+							"StepsCompleted":false
+						},
+						{
+							"title":"Conclusion",
+							"video":"ca010-01",
+							"StepsCompleted":false
 						}
 					]
 				}
@@ -275,6 +848,56 @@
 				},
 				{
 					"title":"Debt Ratios: Year 1 [Workbook]",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Debt Ratios: Year 2 [Workbook]",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Gearing Ratio",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Mini-lecture: Cash Flow vs. Profit",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"A Dynamic View of Solvency",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Dynamic Solvency Ratios",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Debt Repayment Capacity: Year 1 [Workbook]",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Debt Repayment Capacity: Year 2 [Workbook]",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Solvency: Quick Quiz",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Conclusion",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Primer Evaluation",
 					"StepsCompleted":false,
 					"lessons":[]
 				}

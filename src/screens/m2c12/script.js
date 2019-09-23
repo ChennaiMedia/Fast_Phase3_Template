@@ -1,13 +1,6 @@
-﻿var pop_up_title=['WORKBOOK OVERLAY','AQUASAIL OVERLAY','INFO','INPUT ITEM']
-var primary_text=[
-			'Throughout the course, you may need to access previous pages of the workbook in order to complete calculations. Do this by clicking the workbook icon and selecting the page and year needed.',
-			'Remember you may access the Aquasail simulation at any point to find the figures needed to complete your FAST workbook.',
-			'Select this button to review the instruction for the current workbook activity.',
-			'Enter your figures and calculations in these spaces. Be sure to eliminate commas and when necessary, round to the nearest second decimal place.',
-			
-			]
+﻿
 var feedback_title=['Not Quite','Enter the Correct Answer','NICE WORK!']
-var feedback_text=["Review the boxes highlighted in red. Remember, you received 14000 that was invested by the shareholders.","Good try! Select the 'Show Me' button to reveal the correct answers and enter the numbers accordingly.","Your cash inflow and current cash balance are 14000. Note that you can review Aquasail's financial documents at any time by selecting the workbook icon in the upper left corner of the screen to access the FAST workbook."]
+var feedback_text=["Check the areas highlighted in red and try again. Remember, the cash balance needs to show decrease for each investment.","Good try! Select the 'Show Me' button to reveal the correct answers and enter the numbers accordingly.","The cash statement has been updated correctly."]
 var getAnswet=[];
 var correctAnswer=['-4000','-8000','-4800'];
 var clickCount=1;			
