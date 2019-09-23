@@ -114,7 +114,7 @@ var aquaSteps = {
 		clickelem:'postsprite_7',
 		customCursor:'yes',
 		updateArea:'yes',
-		cursorImage:'a1_cur2',		
+		cursorImage:'a1_post',		
 		customCursorSel:'bankdtsprite_9',
 		postBox:'yes',
 		areaData:[0,1,1],

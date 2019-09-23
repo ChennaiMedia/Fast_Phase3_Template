@@ -51,7 +51,7 @@ $(document).ready(function(){
 	console.log(storedNames)
 	 //local storage fetch
 	setTimeout(function(){
-		if(storedNames!=null)recover_data(storedNames);
+		//if(storedNames!=null)recover_data(storedNames);
 	},120)  
 	 //scorm storege fetch
 	/* setTimeout(function(){
@@ -662,7 +662,7 @@ function rgb2hex(rgb) {
 
 function top_navigation()
 {
-
+console.log("chapNo",chapNo)
 		if($("#m"+(modNo-1)+"c"+(chapNo-1)).next().hasClass('lesson_list')){
 			$("#lesson_list"+(modNo-1)+"_"+(chapNo-1)).find('.lesson').each(function(i){
 					if($(this).hasClass('completed'))completestage=true;
@@ -673,9 +673,9 @@ function top_navigation()
 				$("#n"+modNo+"_"+chapNo).removeClass('in-progress').addClass('complete');
 				$("#lesson_list"+(modNo-1)+"_"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo)+"_"+(chapNo+1)).addClass('in-progress').removeClass('incomplete');
 			}
-
+console.log(modNo,chapNo,lesNo,$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
 		}
-		else{
+		else{console.log("ccccccccccccc")
 			$("#chapter_list_"+(modNo-1)).find('.chapter').each(function(i){
 				if($(this).hasClass('completed'))completestage=true;
 				else completestage=false;
@@ -683,8 +683,9 @@ function top_navigation()
 			if(completestage)
 			{
 				$("#n"+modNo).removeClass('in-progress').addClass('complete');
-				$("#m"+(modNo)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete');
-				console.log(modNo,chapNo,lesNo,$("#m"+(modNo)+"c"+(chapNo-1)).next().length==0)
+				//$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete');
+				$("#m"+(modNo)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete');
+				console.log(modNo,chapNo,lesNo,$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
 			}	
 		}
 		if(completestage)
@@ -723,7 +724,7 @@ function recover_data(data)
 	modNo = moduleNo;
 	chapNo = scrNo; 
 	lesNo =	lesScrNo;
-	//console.log(Id,modNo,chapNo,lesNo)
+	console.log(Id,modNo,chapNo,lesNo)
 	for(var i=0;i<modNo;i++){
 		$(".module_list").eq(i).removeClass("menu_NotClick").addClass('menu_Clickable');
 		for(var j=0;j<chapNo;j++){
@@ -771,6 +772,7 @@ function recover_data(data)
 			var lestest=lesNo-1;
 			var trunc=isNaN(lestest)?false:true;
 			//var lesNo=isNaN(lestest)?lesNo=0:lesNo;
+	if(isNaN(lesNo)){lesNo=0}
 			StepComplet();
 			function StepComplet(){
 				for(var i=0;i<=modtest;i++){
@@ -808,10 +810,14 @@ function recover_data(data)
 			{
 				$("#s4,#s2").find(".les_sec").removeClass('in-progress').addClass('complete');
 			}
-			$("#n"+i+"_"+j).addClass('in-progress').removeClass('incomplete');
+			console.log($("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0,i,j)
+			if($("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
+				$("#n"+(i+1)+"_1").addClass('in-progress').removeClass('incomplete');
+			else
+				$("#n"+i+"_"+j).addClass('in-progress').removeClass('incomplete');
 			$("#n"+(i-1)).removeClass('in-progress').addClass('complete');
 			$("#n"+(i)).addClass('in-progress').removeClass('incomplete');
-			console.log("modNo",modNo,chapNo,lesNo)
+			console.log("modNo",modNo,chapNo,lesNo,"#n"+i+"_"+j)
 		}
 		//navigation-Tick
 			$("#progress .section").each(function(i){

@@ -2191,6 +2191,7 @@ position:relative;
           animation-fill-mode: both;
   -webkit-animation-delay: 1700ms;
           animation-delay: 1700ms;
+		  margin:0;
 }
 .welcome_container .content-holder .svg-angle {
   position: absolute;
