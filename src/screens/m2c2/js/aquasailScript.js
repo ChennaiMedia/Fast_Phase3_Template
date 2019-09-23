@@ -35,7 +35,7 @@ var aquaValues = {
 	equity_10:{data:['token100'],val:[0],areaTotal:0},
 	accsrec_11:{data:[],val:[],areaTotal:0},
 	shareholds_12:{data:['token5000','token1000'],val:[2,4],areaTotal:14000},
-	bank_13:{data:['token5000','token1000','token100'],val:[1,1,1],areaTotal:6100},
+	bank_13:{data:['token5000','token1000','token100'],val:[0,0,0],areaTotal:0},
 	tax_14:{data:['token100'],val:[0],areaTotal:0},
 	services_15:{data:['token100'],val:[0],areaTotal:0},
 	propagt_16:{data:['token5000','token1000'],val:[0,0],areaTotal:0},
@@ -425,6 +425,7 @@ function writePost(){
 }
 
 function errorPop(){
+	if($('.postPop').css('display') == 'flex') return;
 	$('.errorMsg').stop();	
 	$('.errorMsg').fadeIn(200, function(){
 		$('.errorMsg').delay(1500).fadeOut(200);

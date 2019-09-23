@@ -553,7 +553,7 @@ html,body{
 	position:absolute;
 	top:1376px;
 	left:1640px;
-	display:none;	
+	display:block;	
 }
 .bankPost img{
 	transform: rotate(-32deg) skewX(-30deg);
@@ -563,7 +563,7 @@ html,body{
 	position:absolute;
 	top:1286px;
 	left:1775px;
-	display:none;	
+	display:block;	
 }
 .equityPost img{
 	transform: rotate(-32deg) skewX(-30deg);
@@ -774,7 +774,7 @@ html,body{
 	top:675px;
 	width:362px;
 	height:355px;
-	background-image:url(../../../../assets/images/simulation/bank_sprite.png);
+	background-image:url(../../../../assets/images/simulation/bank_sprite_a3_1.png);
 	background-position:0px 0px;
 }
 #taxsprite_14{

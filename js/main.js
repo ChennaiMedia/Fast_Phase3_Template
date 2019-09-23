@@ -48,7 +48,7 @@ $(document).ready(function(){
 	});
 	//fetching data
 	storedNames = JSON.parse(localStorage.getItem('storageData'));
-	
+	console.log(storedNames)
 	 //local storage fetch
 	setTimeout(function(){
 		if(storedNames!=null)recover_data(storedNames);
@@ -129,7 +129,7 @@ var getStart = function(){
 	}else{
 		$(".page_holder").load('src/screens/m1c1/index.html');
 	}
-	all_function()//option delete
+	//all_function()//option delete
 }
 /*----------Menu Button Click function----------*/
 var menuBtnClickFun = function(){
@@ -433,6 +433,7 @@ var complete_page = function(){
 	}
 	//local storege
 	localStorage.setItem('storageData', JSON.stringify(setData));
+	
 	//scorm storege
 	/* doLMSSetValue("cmi.core.lesson_location", setData);
 	doLMSCommit();  */
@@ -714,15 +715,15 @@ function recover_data(data)
 	var scrNo = Id[3];
 	var lesScrNo = Id[5];
 	
-	lesScrNo=isNaN(lesScrNo)?lesScrNo=0:'';
-	console.log(lesScrNo)
+	//lesScrNo=isNaN(lesScrNo)?lesScrNo=0:lesScrNo;
+	console.log("lesScrNo",lesScrNo)
 	moduleNo = Number(moduleNo)+1;
 	scrNo = Number(scrNo)+1;
 	lesScrNo = Number(lesScrNo)+1;
 	modNo = moduleNo;
 	chapNo = scrNo; 
 	lesNo =	lesScrNo;
-	console.log(Id,modNo,chapNo,lesNo)
+	//console.log(Id,modNo,chapNo,lesNo)
 	for(var i=0;i<modNo;i++){
 		$(".module_list").eq(i).removeClass("menu_NotClick").addClass('menu_Clickable');
 		for(var j=0;j<chapNo;j++){
@@ -751,6 +752,7 @@ function recover_data(data)
 	}
 	hoverClassSetFun();
 	$(".menu_Clickable").off('click').on('click',menuClickFun);
+	console.log($("#m"+(modNo-1)+"c"+(chapNo-1)+"l"+(lesNo-1)).parent().hasClass('lesson_list'))
 	if($("#m"+(modNo-1)+"c"+(chapNo-1)+"l"+(lesNo-1)).parent().hasClass('lesson_list')||$("#m"+(modNo-1)+"c"+(chapNo-1)).hasClass('lessonHead'+(modNo-1)+'_'+(chapNo-1))){
 		$(".page_holder").load('src/screens/m'+modNo+'c'+chapNo+'l'+lesNo+'/index.html');
 		setData="m"+(modNo-1)+"c"+(chapNo-1)+"l"+(lesNo-1);
@@ -761,7 +763,7 @@ function recover_data(data)
 	}
 	
 	enablePrevBtn();
-	//enableNextBtn();
+	enableNextBtn();
 	
 			//fetch StepsCompleted
 			var modtest=modNo-1;
@@ -811,6 +813,22 @@ function recover_data(data)
 			$("#n"+(i)).addClass('in-progress').removeClass('incomplete');
 			console.log("modNo",modNo,chapNo,lesNo)
 		}
-		
+		//navigation-Tick
+			$("#progress .section").each(function(i){
+				$('#s'+(i+1)+' .sub-section').each(function(j){
+					if($(this).hasClass('complete'))navComStage=true;
+					else navComStage=false;	
+				}); 
+				if(navComStage)
+				{
+					$('#s'+(i+1)+' .completion').show();
+					$('#s'+(i+1)).removeClass('incomplete').addClass('complete');
+				}	
+			})
+			 $("#progress .section").eq(modNo-1).find('.sub-section').each(function(i){
+				if($(this).hasClass('complete'))navComStage=true;
+				else navComStage=false;	
+			}) 
+			if(navComStage)$("#progress .section .completion").eq(modNo-1).show(); //enable 
 		
 }

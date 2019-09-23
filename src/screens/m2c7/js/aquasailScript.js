@@ -8,7 +8,6 @@ var zoomLevel = 0;
 var zoomVal = 0;
 var oneTimeSet = true;
 var scalePos = 0;
-var oneloadset = true;
 var sprite;
 var spriteAnimator;	
 var rightSprite;
@@ -35,8 +34,8 @@ var aquaValues = {
 	bankdt_9:{data:['token100'],val:[0],areaTotal:0},
 	equity_10:{data:['token100'],val:[0],areaTotal:0},
 	accsrec_11:{data:[],val:[],areaTotal:0},
-	shareholds_12:{data:['token5000','token1000'],val:[0,0],areaTotal:0},
-	bank_13:{data:['token5000','token1000','token100'],val:[1,1,1],areaTotal:6100},
+	shareholds_12:{data:['token5000','token1000'],val:[2,4],areaTotal:14000},
+	bank_13:{data:['token5000','token1000','token100'],val:[4,4,0],areaTotal:24000},
 	tax_14:{data:['token100'],val:[0],areaTotal:0},
 	services_15:{data:['token100'],val:[0],areaTotal:0},
 	propagt_16:{data:['token5000','token1000'],val:[0,0],areaTotal:0},
@@ -45,51 +44,9 @@ var aquaValues = {
 
 var aquaSteps = {
 	step_0:{
-		text:'<h3>Tutorial</h3><p>In this Primer you will interact with this 3D simulation of a yacht-building business, Aquasail.</p><p>Before we use the simulation in the course, here is a quick tutorial on how to use it.</p><p>In the middle of the simulation is a main building. Select this tutorial instruction window and drag it to the left or right so you can see this building, which is Aquasail headquarters. In it are rooms representing different functions, for example the yacht assembly hall, warehouses for raw materials and finished goods, and back office. Around the Aquasail building are external institutions and services, such as the bank, shareholders, customers and suppliers.</p>',
-		questTxt:'First, select the map icon in the bottom left hand corner to display the names of all the locations in the simulation. You can use the navigation pad at the bottom to move the map around and zoom in and out. Try switching the names on and off – can you remember what each of the locations are? Now test yourself with the names switched off. Select the Suppliers location.',
+		text:'<h3>Ready? Let’s go!</h3><p>You have convinced your banker to lend Aquasail 24000 cash. Note that Aquasail will have to pay 10% interest per year on the outstanding amount, and 3000 of the principal amount has to be repaid on December 31 each year. The duration of the debt is hence 8 years.</p>',
+		questTxt:'Move 24000 from the Bank to Cash.',
 		feedback:'no',
-		questPanel:'yes',
-		stayScreen:'no',
-		clickelem:'suplssprite_1',
-		customCursor:'no',
-		updateArea:'no',
-		customCursorSel:'',
-		postBox:'',
-		changeSprite:'no',
-		complete:false	
-	},
-	step_1:{
-		text:'<h3>Well Done!</h3><p>When you select a location, you’ll see that it flips over and reveals one or more token holders. These token holders may contain cash, raw materials or finished goods. Throughout this Primer you will move cash or other resources into, through and out of the business. This will enable you to understand how a company’s finances work.</p>',
-		questTxt:'Use the navigation arrows and the map to locate the Bank. Then select the Bank.',
-		feedback:'yes',
-		questPanel:'yes',
-		stayScreen:'no',
-		clickelem:'banksprite_13',
-		customCursor:'no',
-		updateArea:'no',
-		customCursorSel:'',
-		postBox:'',
-		changeSprite:'no',
-		complete:false
-	},
-	step_2:{
-		text:'<h3>The Bank</h3><p>You should now see (don’t forget that you can drag this instruction window to a different location if it is in the way) that inside the Bank there are cash tokens in the placeholders, one 5000 cash piece (gold), one 1000 cash piece (silver) and one 100 cash piece (bronze). Note that when you select a location, the cash or resources it contains are shown on the dashboard at the top right of the simulation. </p>',
-		questTxt:'',
-		feedback:'yes',
-		questPanel:'no',
-		stayScreen:'yes',
-		clickelem:'',
-		customCursor:'no',
-		updateArea:'no',
-		customCursorSel:'',
-		postBox:'',
-		changeSprite:'no',
-		complete:false
-	},
-	step_3:{
-		text:'<h3>Next</h3><p>Next you will move cash from the Bank to the Cash location in the middle of the Aquasail building. This Cash location represents all the cash you currently have available in the business. Your current cash situation is always displayed on the dashboard at the top left of the simulation.</p>',
-		questTxt:'Select the Bank, then select 1100 in tokens. Move them to the token holders in the cash location and deposit them there. Notice when you select tokens, the location you need to move them to will animate so you can see where they need to go.',
-		feedback:'yes',
 		questPanel:'yes',
 		stayScreen:'no',
 		clickelem:'banksprite_13',
@@ -97,17 +54,17 @@ var aquaSteps = {
 		updateArea:'no',
 		cursorImage:'a1_cur1',		
 		customCursorSel:'cashsprite_6',
-		cashValues:[1,1,0],
+		cashValues:[0,8,6],
 		postBox:'',	
-		areaData:[1,0,0],
-		areaDataTotal:5000,	
+		areaData:[0,0],
+		areaDataTotal:0,	
 		changeSprite:'yes',
-		changeSrc:'bank_sprite_a1',
+		changeSrc:'bank_sprite_a3_2',
 		complete:false	
 	},
-	step_4:{
-		text:'<h3>Well Done!</h3> <p>With that move you have successfully borrowed 1100 cash from the Bank for Aquasail, and at the same time mastered the main drag-and-drop functionality you will be using in the simulation! </p> <p>Occasionally you will be asked to write yourself a note to remind yourself of cash you have borrowed. There is a virtual post-it pad for you to use for this purpose.</p>',
-		questTxt:'Check it out—to make a note of the 1100 cash you borrowed, first select the post-it pad. A new window will open, asking you to type in the amount. Type in 1100 and select ‘write’. Then drag the post-it-pad to the Bank Debt location.',
+	step_1:{
+		text:'<h3>Well Done!</h3><p>You successfully moved the tokens from the Bank.</p>',
+		questTxt:'Now select the post-it pad and write 24000 on a post-it. Move the post-it with 24000 written on it to Bank Debt.',
 		feedback:'yes',
 		questPanel:'yes',
 		stayScreen:'no',
@@ -117,14 +74,14 @@ var aquaSteps = {
 		cursorImage:'a1_cur2',		
 		customCursorSel:'bankdtsprite_9',
 		postBox:'yes',
-		areaData:[0,1,1],
-		areaDataTotal:1100,
-		postValue:1100,
+		areaData:[6,8,0],
+		areaDataTotal:38000,
+		postValue:38000,
 		changeSprite:'no',	
-		complete:false	
+		complete:false
 	},
-	step_5:{
-		text:'<h3> Next-Update the Workbook</h3> <p>Select the arrow to continue to the next page, where you can record the transaction in the workbook.</p>',
+	step_2:{
+		text:'<h3>Well Done!</h3><p>You’ve successfully added a post-it to Bank Debt.</p><p>When you are ready, select the arrow to continue to the next page.</p>',
 		questTxt:'',
 		feedback:'yes',
 		questPanel:'no',
@@ -133,8 +90,10 @@ var aquaSteps = {
 		customCursor:'',
 		updateArea:'no',
 		customCursorSel:'',	
-		changeSprite:'no',	
-		complete:true,		
+		changeSprite:'no',
+		postClass:'bankPost',
+		postImg:'postit-24000',	
+		complete:true		
 	}		
 }
 
@@ -174,10 +133,11 @@ $(document).ready(function(){
 	document.body.appendChild(sound);
 	$('#audiobg').trigger('play');	
 	$('.zoompan').css('display','block');	
-	$('#map-btn').css('background-color','#981d97');
+	$('#map-btn').css('background-color','#981d97');	
 	$('#map-btn').removeClass('animating');	
 	var ovrlayH = docInnerHeight-standardTop;		
 	$('.aquasilCont').css('height',ovrlayH+"px");
+	defaultCashValues(0,4,2);
 });
 
 function cursorMoving(e){	
@@ -232,7 +192,6 @@ function hidePopNext(){
 			$(this).parent().children().eq(1).css('display','none');	
 		}
 	});	
-	if(moveStep<=0) $('#map-btn').addClass('animating');	
 }
 
 function showPopNext(){
@@ -253,7 +212,8 @@ function showPopNext(){
 	{
 		$('.move-feedback-box-holder').css('display','none'); 
 	}
-	if(checkComplete){		
+	if(checkComplete){
+		
 		$('#closePanel').css('display','none');		
 		stopSprite();		
 		$('[data-common="commonSprite"]').each(function(a,b){
@@ -267,10 +227,13 @@ function showPopNext(){
 			}
 		});
 		$('.area-info-box-holder').css('display','none');
-		$('.bankPost').css('display','block');
+		var postgeClass = aquaSteps['step_'+moveStep].postClass;
+		var postGetImg = aquaSteps['step_'+moveStep].postImg;
+		$('.'+postgeClass).find('img').attr('src',simImgPath+postGetImg+'.jpg')
+		$('.'+postgeClass).css('display','block');
 		complete_page();
 		enableNextBtn();
-	}
+	}	
 	var minH = parseInt($('.aquasailPop').css('min-height')) - $('.aquasilInner').height();
 	$('.aquasailPop').css('min-height',minH);
 }	
@@ -398,6 +361,18 @@ function updateCashValues(){
 	}	
 }
 
+function defaultCashValues(a100,b1000,c5000){
+	for(var i=0;i<a100;i++){
+		$('.tray_100').append('<img src="assets/images/simulation/token100.png" style="top:'+(i*(-6))+'px" class="absPos" width="55px"/>')
+	}
+	for(var j=0;j<b1000;j++){
+		$('.tray_1000').append('<img src="assets/images/simulation/token1000.png" style="top:'+(j*(-6))+'px" class="absPos" width="55px"/>')
+	}
+	for(var k=0;k<c5000;k++){
+		$('.tray_5000').append('<img src="assets/images/simulation/token5000.png" style="top:'+(k*(-6))+'px" class="absPos" width="55px"/>')
+	}
+}
+
 function showAreaInfo(ctcls)
 	{
 		$('.token-holder').empty();		
@@ -423,15 +398,13 @@ function againAreaUpdate(elem){
 	$('.value-total').find('span').html(aquaValues[findSel]['areaTotal']);
 	if(aquaSteps['step_'+moveStep].postBox == 'yes'){
 		$('.cash-total').find('span').html(aquaValues[findSel]['areaTotal']);		
-		for(var j=aquaValues[findSel]['val'].length-1,k=0;j>0;j--,k++){
-			console.log(k, aquaValues[findSel]['val'][j]);	
+		for(var j=aquaValues[findSel]['val'].length-1,k=0;j>=0;j--,k++){			
 			$('.cash-box-title').find('div').eq(k).text(aquaValues[findSel]['val'][j]);
 		}	
 	}
 }
 
-function validateAns(e)
-{
+function validateAns(e){
 	var crctAns = Number($(this).attr('data-correct'));
 	var inputVal = Number($('#postit-input').val());	
 	if(inputVal == crctAns){

@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/required/jquery.js"></script>
+	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="src/screens/m2c8/style.css">
+	<script type="text/javascript" src="src/screens/m2c8/script.js"></script>
+	<script type="text/javascript" src="js/required/jquery.preload.js"></script>
+	<script>	
+	var imgs = [
+		'assets/images/screens/module_1/Main_Scene.png',			
+	];
+	
+	$.preload(imgs, {
+		each: function (count) {
+		   
+		},
+		all: function () {			
+			$('.activityContainer').fadeIn(200);					  
+		}  
+	});			
+	</script>
+</head>
+<body>
+	<div class="activityContainer" style="display:none">
+		<div class="intro-panel">
+			<div class="text-content">
+				<h1 class="title-text">Update Cash Statement</h1>
+				<div class="primary-text">
+					<p>In your FAST workbook, update the Cash Flow Statement to record the 24000 Cash inflow. Record it as Bank Debt. Also update the Cash Balance.</p>
+				</div>         
+				<button data-Id='0' class="btn-text btn-close clickable btn-text">CONTINUE</button>
+			</div>
+		</div>
+		<div data-ui="movesWrapper" class="moves-box-holder expanded">
+			<div data-ui="toggle" class="btn-icon btn moves-box-toggle clickable">
+				<div class="icon icon-01"></div>
+				<div class="icon icon-02"></div>
+			</div>
+			<div data-ui="movesHolder" class="moves-holder">
+				<h3>RECENT MOVES</h3>
+				<div class="move-holder">				
+					<div class="from-holder">
+						<strong class="from-label"> From: </strong>
+						<span class="from-value">Shareholders</span>
+					</div>
+					<div class="to-holder">
+						<strong class="to-label"> To: </strong>
+						<span class="to-value">Cash</span>
+					</div>
+					<div class="value-holder">
+							<span class="value-total total-value">14,000</span>
+					</div>
+				</div>
+				<div class="move-holder">
+					<div class="to-holder">
+						<strong class="to-label"> To: </strong>
+						<span class="to-value">Equity</span>
+					</div>
+					<div class="value-holder special-value-type">
+						<div class="special-value-icon postit-icon"></div>
+						<div class="value-total total-value">14,000</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+			
+				<div class="question workbook">
+					<div data-ui="infoBox" class="info-overlay">
+						  <div class="question-primary-text"><p>Update the cash statement to show the second incoming cash is the 24000 provided by the bank. Remember that the bottom entry in the Cash Balance column is cumulative, so it reflects the original 14000 plus the new 24000 you have raised from the bank.</p></div>
+					</div>
+					<button data-ui="info" id="info-btn" class="btn-info clickable">i</button>
+					<div id="workbook2_Heading" style="">STARTING CASH STARTUP: 0</div>
+					<div id="workbook2_child0" style=""> 
+						<!-- <h1>TUTORIAL: BALANCE SHEET</h1>  -->
+						<div class="headitems"> 
+							<div class="celldivider"></div> 
+							<span class="item">CASH FLOW</span> 
+							<span class="item">CASH BALANCE</span> 
+						</div> 
+						<div class="subitem1"> 
+							<!-- <div class="celldivider1"></div> 
+							<div class="celldivider2"></div> --> 
+							<span class="item">Shareholders</span>
+							<span class="item">
+								<span class="numbers90 ">14000</span>
+							</span> 
+							<!-- <span class="item">Equity Capital</span>  -->
+							<span class="item">
+								<span class="numbers90">14000</span>
+							</span> 
+						</div> 
+						 <div class="subitem2"> 
+							<div class="celldivider"></div>
+							<span class="item">Bank</span> 
+							<span class="item">
+								<span class="numbers90"><input type="number" step="100" class="workbook-input numbers" data-itemindex="0"></span>
+							</span>
+							<!-- <span class="item">Total Equity &amp; Liabilities</span>  -->
+							<span class="item">
+								<span class="numbers90  boldLato autoFill" data-itemindex="1"></span>
+							</span> 
+						</div> 
+					</div>
+					<button data-ui="submit" class="submit btn-text clickable disabled">SUBMIT</button>
+						<div data-region="feedback" class="feedback-holder"></div>
+				
+			</div>
+											
+											<div data-region="feedback" class="feedback-holder">
+											<div class="text-panel">
+											<div class="text-content">
+													<h3 class="title-text">Not Quite</h3>
+													<div class="primary-text"><p>Be sure to indicate the move of 1100 in all fields.</p></div>
+													<button data-ui="close" class="btn-close show clickable btn-icon"></button>
+											</div>
+											</div>
+											</div>
+			<div class="overlayDiv"></div>
+	</div>
+	
+</body>
+</html>
