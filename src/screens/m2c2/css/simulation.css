@@ -135,6 +135,9 @@ html,body{
     background-color: #212121; }
 .btn-text.active {
     cursor: default; }
+#closePanel{
+	text-transform:uppercase;
+}
 .move-feedback-box-holder{
     content: ' ';
     display: block;

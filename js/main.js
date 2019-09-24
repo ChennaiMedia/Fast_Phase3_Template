@@ -172,6 +172,7 @@ var menuListCreation = function(FWBdata){
 				$('.menu_wrapper').append('<div id="chapter_list_'+i+'" class="chapter_list"></div>');
 				$("#m"+i).html(listData[i].modName);
 				$("#m"+i).css({"padding":"10px","margin-bottom":"0px"});
+				$("#m"+i).css({"padding-left": "50px","text-indent":" -30px"});
 		for(var j=0;j<listData[i].chapters.length;j++){
 				var temp='m'+i+'c'+j;
 				$('#chapter_list_'+i).append('<div id='+temp+' class="chapter'+i+' chapter subMenu_NotClick"></div>');
@@ -466,6 +467,7 @@ var enableNextBtn = function(){
 		$("#m"+(modNo)+"c"+(lesNo-1)+"l"+(0)).removeClass("lesson_NotClick").addClass('lesson_Clickable');
 
 	}
+	console.log("complete:: "+modNo+" :: "+chapNo);
 	hoverClassSetFun();	
 	$(".subMenu_Clickable").off('click').on('click',subMenuClickFun);
 	$(".lesson_Clickable").off('click').on('click',lessonClickFun);
@@ -662,7 +664,7 @@ function rgb2hex(rgb) {
 
 function top_navigation()
 {
-
+console.log($("#m"+(modNo-1)+"c"+(chapNo-1)).next().hasClass('lesson_list'))
 		if($("#m"+(modNo-1)+"c"+(chapNo-1)).next().hasClass('lesson_list')){
 			$("#lesson_list"+(modNo-1)+"_"+(chapNo-1)).find('.lesson').each(function(i){
 					if($(this).hasClass('completed'))completestage=true;
@@ -683,8 +685,12 @@ function top_navigation()
 			if(completestage)
 			{
 				$("#n"+modNo).removeClass('in-progress').addClass('complete');
-				$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete');
+				//$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete');
 				//$("#m"+(modNo)+"c"+(chapNo-1)).next().length==0?$("#n"+(modNo+1)).addClass('in-progress').removeClass('incomplete'):$("#n"+(modNo+1)+"_"+(lesNo)).addClass('in-progress').removeClass('incomplete');
+				
+				if($("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
+				{$(".n"+(modNo+1)).eq(0).addClass('in-progress').removeClass('incomplete')}
+				
 				console.log(modNo,chapNo,lesNo,$("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
 			}	
 		}
@@ -811,9 +817,9 @@ function recover_data(data)
 				$("#s4,#s2").find(".les_sec").removeClass('in-progress').addClass('complete');
 			}
 
-			if($("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
+			 if($("#m"+(modNo-1)+"c"+(chapNo-1)).next().length==0)
 				$("#n"+(i+1)+"_1").addClass('in-progress').removeClass('incomplete');
-			else
+			else 
 				$("#n"+i+"_"+j).addClass('in-progress').removeClass('incomplete');
 			$("#n"+(i-1)).removeClass('in-progress').addClass('complete');
 			$("#n"+(i)).addClass('in-progress').removeClass('incomplete');
