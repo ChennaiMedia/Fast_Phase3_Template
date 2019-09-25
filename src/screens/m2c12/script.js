@@ -66,7 +66,7 @@ $(document).ready(function(){
 			$('.feedback-holder').find('.title-text').text(feedback_title[2])
 			$('.feedback-holder').find('.primary-text p').text(feedback_text[2])
 			$('.feedback-holder').find('.show').addClass('btn-icon').removeClass('btn-text');
-			$('.feedback-holder').find('.show').text('');
+			$('.feedback-holder').find('.show').text('');		
 			setTimeout(function(){$('.feedback-holder').show();},200);
 			complete_page()
 			enableNextBtn()
@@ -77,7 +77,7 @@ $(document).ready(function(){
 			{
 				$('.feedback-holder').hide();
 				$('.feedback-holder').find('.title-text').text(feedback_title[0])
-				$('.feedback-holder').find('.primary-text p').text(feedback_text[0])
+				$('.feedback-holder').find('.primary-text p').text(feedback_text[0])			
 				setTimeout(function(){$('.feedback-holder').show();},200)
 			}
 			else{
@@ -85,7 +85,7 @@ $(document).ready(function(){
 				$('.feedback-holder').find('.title-text').text(feedback_title[1])
 				$('.feedback-holder').find('.primary-text p').text(feedback_text[1])
 				$('.feedback-holder').find('.show').addClass('btn-text').removeClass('btn-icon');
-				$('.feedback-holder').find('.show').text('SHOW ME');
+				$('.feedback-holder').find('.show').text('SHOW ME');		
 				setTimeout(function(){$('.feedback-holder').show();},200)
 			}
 			clickCount++;
@@ -93,6 +93,7 @@ $(document).ready(function(){
 	})
 	$('.btn-close').on('click',function(){
 		$('.feedback-holder').hide();
+		
 		if(!$('.btn-close').hasClass('btn-icon'))
 		{
 			$('.submit').addClass('disabled');
@@ -105,13 +106,13 @@ $(document).ready(function(){
 		}
 		
 	})
-	$("input").focus(function(){
+	/* $("input").focus(function(){
 		if($(this).parent().hasClass('incorrect'))
 		{	
-			$(this).val('');
+			//$(this).val('');
 			$(this).parent().removeClass('incorrect');
 		}
-	});
+	}); */
 	
 	$("input").on('keyup change',function(){		
 		var isValid=true;
@@ -130,5 +131,13 @@ $(document).ready(function(){
 		if(isValid)
 		$('.submit').removeClass('disabled');		
 	});
+	
+	$('input[name="number"]').keypress(function (e) { 
+		var numKey = e.keyCode || e.which;		
+		if (numKey != 8 && numKey != 0 && numKey != 45 && (numKey < 48 || numKey > 57)) {        
+			return false;
+    }
+});
+	
 	
 })

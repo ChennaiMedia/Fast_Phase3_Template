@@ -47,12 +47,12 @@ $(document).ready(function(){
 		menuListCreation(FWBdata);		
 	});
 	//fetching data
-	storedNames = JSON.parse(localStorage.getItem('storageData'));
+	/* storedNames = JSON.parse(localStorage.getItem('storageData'));
 	console.log(storedNames)
 	 //local storage fetch
 	setTimeout(function(){
 		//if(storedNames!=null)recover_data(storedNames);
-	},120)  
+	},120)   */
 	 //scorm storege fetch
 	/* setTimeout(function(){
 		if(Lesson_location!='')recover_data(Lesson_location);
@@ -122,10 +122,10 @@ function goWindowResize(){
 
 var getStart = function(){
 	$('.welcome_container').hide();
-	 if(Lesson_location!=''||storedNames!=null){
-	recover_data(storedNames);
+	if(Lesson_location!=''||storedNames!=null){
+	//recover_data(storedNames);
 	//recover_data(Lesson_location);
-	//$(".page_holder").load('src/screens/m1c1/index.html');
+	$(".page_holder").load('src/screens/m1c1/index.html');
 	}else{
 		$(".page_holder").load('src/screens/m1c1/index.html');
 	}
@@ -433,7 +433,7 @@ var complete_page = function(){
 		$("#m"+(modNo-1)+"c"+(chapNo-1)).addClass('completed');
 	}
 	//local storege
-	localStorage.setItem('storageData', JSON.stringify(setData));
+	/* localStorage.setItem('storageData', JSON.stringify(setData)); */
 	
 	//scorm storege
 	/* doLMSSetValue("cmi.core.lesson_location", setData);

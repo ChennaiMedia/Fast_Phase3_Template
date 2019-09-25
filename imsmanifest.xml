@@ -12,9 +12,9 @@
    </metadata>
    <organizations default = "SAMPLE">
       <organization identifier = "SAMPLE">
-         <title>FAST3 Module Welcome</title>
+         <title>FAST3 Module Startup</title>
          <item identifier ="ident001" identifierref ="sample1" isvisible = "true">
-              <title>FAST3 Module Welcome</title>
+              <title>FAST3 Module Startup</title>
 			  <adlcp:masteryscore>100</adlcp:masteryscore> 
          </item>
       </organization>

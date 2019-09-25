@@ -69,6 +69,7 @@ $(document).ready(function(){
 			$('.feedback-holder').find('.primary-text p').text(feedback_text[2])
 			$('.feedback-holder').find('.show').addClass('btn-icon').removeClass('btn-text');
 			$('.feedback-holder').find('.show').text('');
+			//$('input[type="number"]').prop('disabled', true);
 			setTimeout(function(){$('.feedback-holder').show();},200);
 			complete_page()
 			enableNextBtn()
@@ -80,6 +81,7 @@ $(document).ready(function(){
 				$('.feedback-holder').hide();
 				$('.feedback-holder').find('.title-text').text(feedback_title[0])
 				$('.feedback-holder').find('.primary-text p').text(feedback_text[0])
+				//$('input[type="number"]').prop('disabled', true);
 				setTimeout(function(){$('.feedback-holder').show();},200)
 			}
 			else{
@@ -88,12 +90,14 @@ $(document).ready(function(){
 				$('.feedback-holder').find('.primary-text p').text(feedback_text[1])
 				$('.feedback-holder').find('.show').addClass('btn-text').removeClass('btn-icon');
 				$('.feedback-holder').find('.show').text('SHOW ME');
+				//$('input[type="number"]').prop('disabled', true);
 				setTimeout(function(){$('.feedback-holder').show();},200)
 			}
 			clickCount++;
 		}	
 	})
 	$('.btn-close').on('click',function(){
+		//$('input[type="number"]').prop('disabled', false);
 		$('.feedback-holder').hide();
 		if(!$('.btn-close').hasClass('btn-icon'))
 		{
@@ -108,13 +112,13 @@ $(document).ready(function(){
 		}
 		
 	})
-	$("input").focus(function(){
+	/* $("input").focus(function(){
 		if($(this).parent().hasClass('incorrect'))
 		{	
-			$(this).val('');
+			//$(this).val('');
 			$(this).parent().removeClass('incorrect');
 		}
-	});
+	}); */
 	
 	$("input").on('keyup change',function(){
 		
@@ -131,6 +135,12 @@ $(document).ready(function(){
 		if(isValid)
 		$('.submit').removeClass('disabled');
 		
+	});
+	$('input[type="number"]').keypress(function (e) { 
+			var numKey = e.keyCode || e.which;		
+			if (numKey != 8 && numKey != 0 && numKey != 45 && (numKey < 48 || numKey > 57)) {        
+				return false;
+		}
 	});
 	/* $(window).resize(function(){
 		if($('.pop_up .btn-text').attr('data-Id')=='3'){

@@ -568,7 +568,8 @@ function toggleContent()
 	}
 
 $('input[name="number"]').keypress(function (e) { 
-	var numKey = e.keyCode || e.which;	
+	var numKey = e.keyCode || e.which;
+	console.log(numKey)	
     if (numKey != 8 && numKey != 0 && (numKey < 48 || numKey > 57)) {        
         return false;
     }
