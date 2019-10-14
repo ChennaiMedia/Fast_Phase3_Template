@@ -106,6 +106,44 @@ var aquaLegends = {
 	},
 }
 
+var aquaRecent = {
+	aquasail_1:{
+		elem:['Shareholders','Equity','Cash'],
+		value:['0','14,000','14,000'],
+		post:['Equity']
+	},
+	aquasail_2:{
+		elem:['Bank','Bank Debt','Cash'],
+		value:['0','24,000','38,000'],
+		post:['Bank Debt']
+	},
+	aquasail_3:{
+		elem:['Property Agent','Cash','Suppliers'],
+		value:['12,000','21,200','4,800'],
+		post:['']
+	}
+}
+
+var recentColor = "#ff6a13";
+var defaultColor = "#981d97";
+
+function setRecentAquasail(){
+	createAquasail();
+	$.each(aquaRecent['aquasail_'+aquasilVisitPos]['elem'], function(ind,elem){		
+		$('[data-label="'+elem+'"]').attr('data-color',recentColor);
+		$('[data-label="'+elem+'"]').find('.item-label').css('background-color',recentColor);
+		$('[data-label="'+elem+'"]').find('.item-icon').children().css('background-color',recentColor);		
+		$('[data-label="'+elem+'"]').find('.item-icon').css('border-color',recentColor);
+		var getValue = aquaRecent['aquasail_'+aquasilVisitPos]['value'][ind];
+		$('[data-label="'+elem+'"]').find('.total-value').text(getValue);
+	});	
+	$.each(aquaRecent['aquasail_'+aquasilVisitPos]['post'], function(ind,elem){		
+		$('[data-label="'+elem+'"]').find('.item-content').find('.postit-holder').remove();
+		var setValue = $('[data-label="'+elem+'"]').find('.total-value').text();
+		$('[data-label="'+elem+'"]').find('.item-content').append('<div class="postit-holder special-holder"><div class="postit-icon"></div><div class="special-value">'+setValue+'</div></div>');
+	});	
+}
+
 function showZoomNav()
 	{		
 		$('.zoompan').append('<div class="navBox"></div>');

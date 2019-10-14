@@ -23,3 +23,7 @@ font-family:lato-bold;
 #nav_prevBtn{
 	bottom: 135px;
 }
+.menu_NotClick
+{
+pointer-events: none;
+}

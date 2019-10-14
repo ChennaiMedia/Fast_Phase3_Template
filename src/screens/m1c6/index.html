@@ -1,221 +1,103 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Simulation</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="src/screens/m1c6/css/simulation.css" />	
-	
-	
-	<script type="text/javascript" src="js/required/jquery.sprite-animator.min.js" async="true" ></script>	
-	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>	
-	<script type="text/javascript" src="js/required/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="js/required/jquery.js"></script>
+	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="src/screens/m1c6/style.css">
+	<script type="text/javascript" src="src/screens/m1c6/script.js"></script>
 	<script type="text/javascript" src="js/required/jquery.preload.js"></script>
-	
-	<script type="text/javascript" src="src/screens/m1c6/js/aquasailScript.js"></script>		
-	<script type="text/javascript" src="js/required/jquery.transform2d.js"></script>
-	<script type="text/javascript" src="js/required/jquery.transform3d.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script> 
-	<script>
-	
+	<script>	
 	var imgs = [
-		'assets/images/icon-map.svg',
-		'assets/images/btn-zoom-in.svg',
-		'assets/images/btn-zoom-out.svg',
-		'assets/images/icon-x-black.svg',
-		'assets/images/simulation/vlerick-splash.svg',
-		'assets/images/simulation/canvasBase.svg',	
-		'assets/images/simulation/canvasBase.jpg',
-		'assets/images/simulation/accspay_sprite.png',					
-		'assets/images/simulation/finishedgood_sprite.png',					
-		'assets/images/simulation/asslines1_sprite.png',
-		'assets/images/simulation/asslines2_sprite.png',
-		'assets/images/simulation/asslines3_sprite.png',
-		'assets/images/simulation/asslines4_sprite.png',
-		'assets/images/simulation/rawmaterials_sprite.png',
-		'assets/images/simulation/accsrec_sprite.png',
-		'assets/images/simulation/bank_sprite.png',	
-		'assets/images/simulation/bank_sprite_a1.png',	
-		'assets/images/simulation/bankdt_sprite.png',	
-		'assets/images/simulation/cash.png',	
-		'assets/images/simulation/employees_sprite.png',	
-		'assets/images/simulation/equiry_sprite.png',
-		'assets/images/simulation/tax_sprite.png',	
-		'assets/images/simulation/post-it.png',	
-		'assets/images/simulation/shareholds_sprite.png',	
-		'assets/images/simulation/suppliers_sprite.png',
-		'assets/images/simulation/services_sprite.png',
-		'assets/images/simulation/propagent_sprite.png',
-		'assets/images/simulation/customers_sprite.png',
-		'assets/images/simulation/postit-1100.jpg',
-		'assets/images/simulation/bg-post-it.svg',
-		'assets/images/simulation/a1_cur1.svg',
-		'assets/images/simulation/a1_post.svg',
-		'assets/images/simulation/token100.png',
-		'assets/images/simulation/token1000.png',
-		'assets/images/simulation/token5000.png',
-		'assets/images/simulation/maskwallbottom.png',
-		'assets/images/simulation/maskwallLeft.png',
-		'assets/images/simulation/maskwallright.png',
-		'assets/images/simulation/maskwall_4.png',
-		'assets/images/simulation/maskwall_5.png',		
+		'assets/images/screens/module_1/aa050-01.jpg',
+		'assets/images/screens/module_1/aa050-02.jpg',
+		'assets/images/screens/module_1/aa050-03.jpg'	
 	];
 	
 	$.preload(imgs, {
 		each: function (count) {
 		   
 		},
-		all: function () {
-			$('.preloaderAqua').stop();			
-			$('.preloaderAqua').delay(500).fadeOut(500, function(){				
-				$('.overlayAquasil').css('display','flex');
-				$('.top-bar').css('display','flex');
-				$('.dummyNav').css('display','none');
-				
-			});
-			var initDelay = window.setTimeout(function(){
-				$('.canvasBase').css('display','block');						
-				canvasResize();					
-				if(!isFirefox) setSprite();
-				$('.canvasClick').load('assets/images/simulation/canvasBase.svg', function(){		
-					$('[data-common="commonSprite"]').on('click', runSprite).off('click');					
-				});
-				$('.canvasBase').on('mousedown',function(e){e.preventDefault();});
-				window.clearTimeout(initDelay);
-			},300);					  
+		all: function () {			
+			$('.activityContainer').fadeIn(200);					  
 		}  
 	});			
-</script>
+	</script>
 </head>
 <body>
-	<div class="aquasilCont">		
-		<div class="canvasBase">
-			<img src="assets/images/simulation/canvasBase.jpg" class="simBase"/>				
-				
-			<div id="suplssprite_1"></div>
-			<div id="empssprite_2"></div>
-			<div id="fgwsprite_3"></div>			
-			<div id="asslines2sprite_5"></div>			
-			<div id="asslines4sprite_5"></div>
-			<div id="asslines3sprite_5"></div>			
-			<div id="asslines1sprite_5"></div>			
-			<div class="maskWallPos5">
-				<img src="assets/images/simulation/maskwall_4.png"/>
-				<img src="assets/images/simulation/maskwall_5.png" class="maskimg1"/>				
-			</div>
-			
-			<div id="rmwsprite_4"></div>			
-			<div id="postsprite_7"></div>
-			
-			<div class="maskWallPos4">
-				<img src="assets/images/simulation/maskwallright.png"/>				
-			</div>
-			<div id="accsrecsprite_11"></div>
-			<div class="maskWallPos3">
-				<img src="assets/images/simulation/maskwallright.png"/>				
-			</div>
-			<div id="equitysprite_10"></div>
-			
-			<div class="maskWallPos2">
-				<img src="assets/images/simulation/maskwallright.png"/>				
-			</div>
-			<div id="bankdtsprite_9"></div>
-			
-			<div class="maskWallPos1">
-				<img src="assets/images/simulation/maskwallright.png"/>				
-			</div>
-			<div id="accspaysprite_8"></div>			
-			
-			
-			<div id="cashsprite_6">
-				<div class="cashCoins">
-					<div class="tray_5000"></div>
-					<div class="tray_1000"></div>				
-					<div class="tray_100"></div>
+	<div class="activityContainer explore" style="display:none">
+		<div class="content1">
+			<div class="panel_1">
+				<h1 class="title-text">Meet the Faculty</h1>
+				<div class="primary-text">
+					<p>In this Primer you will meet three Vlerick faculty. Professor Sophie Manigart is the principal course leader, while Professor Mathieu Luypaert and Professor Wouter de Maeseneire provide mini-lectures on key finance topics.</p>
+				</div>
+				<div class="directions-text">
+					<p>Select each name to learn more about the course leaders.</p>
 				</div>
 			</div>
-			
-			<div id="shareholdssprite_12"></div>
-			<div id="banksprite_13"></div>
-			<div id="taxsprite_14"></div>
-			<div id="servicessprite_15"></div>
-			<div id="propagtsprite_16"></div>
-			<div id="custsprite_17"></div>
-			
-			<div class="maskWallPos">
-				<img src="assets/images/simulation/maskwallbottom.png"/>	
-				<img src="assets/images/simulation/maskwallLeft.png" class="maskimg1"/>	
-			</div>			
-			
-			<div class="bankPost">
-				<img src="assets/images/simulation/postit-1100.jpg" />
-			</div>
-			
-			<div class="legendDis"></div>
-			<div class="canvasClick"></div>
+						<div class="node-holder holder">
+							<div data-ui="nodes" class="node clickable" data-index="0">
+								<div class="node-wrapper">
+									<div class="label-holder">
+									  <h2 class="node-label">
+										Professor Sophie Manigart
+									  </h2>
+									</div>
+									<div class="node-content">
+										<div class="primary-text">
+											<p>Sophie Manigart is partner at Vlerick Business School and full professor at Ghent University. She is heading Vlerick’s accounting and finance department. Her broad experience in teaching non-financial managers has pushed her to develop the FAST simulation. Her special area of expertise is “entrepreneurial finance”, focused on developing financing strategies for high growth ventures. </p>
+											<p>She has been teaching entrepreneurial finance at London Business School (UK), IE Business School (Madrid, Spain) and TIAS (Tilburg, The Netherlands). She has consulted on this topic for policy makers at the regional, national and EU level. She was the co-founder of the premier business angel network in Belgium (Vlaanderen BAN), and is or was a board member of GIMV, AXA Belgium and Ovinto (a tech startup company).</p>
+										</div>
+									</div>
+								</div>
+								<div class="graphic-holder background-graphic">
+								  <div style="background-image: url('assets/images/screens/module_1/aa050-01.jpg')" class="graphic"></div>
+								</div>
+							</div>
+							<div data-ui="nodes" class="node clickable" data-index="1">
+								<div class="node-wrapper">
+									<div class="label-holder">
+									  <h2 class="node-label">
+										Professor Mathieu Luypaert
+									  </h2>
+									</div>	
+									<div class="node-content">
+										<div class="primary-text">
+											<p>Mathieu is a Partner and Associate Professor of Corporate Finance at Vlerick Business School where he is also the Programme Director of the Masters in General Management. He taught several courses in the domain of corporate finance including topics like financial statement analysis, capital budgeting, working capital management, valuation and mergers and acquisitions. His research focuses entirely on the latter topic of mergers and acquisitions. </p>
+											<p>For his doctoral dissertation, he studied value creation in European M&amp;A deals, and specialized further in the topic afterwards. In that respect, he also heads Vlerick’s Centre for Mergers, Acquisitions and Buyouts. In addition to his academic position at Vlerick, he has gained a lot of international experience by teaching at other institutions like WIT in Ireland, Institut Paul Bocuse in France and the DUBAI campus of EHSAL. He was also a Visiting Professor at Insead Business School.</p>
+											<p>At a more personal level, Mathieu enjoys playing volleyball, wining &amp; dining and spending his holidays in the South of France.</p>
+										</div>
+									</div>
+								</div>						  
+								<div class="graphic-holder background-graphic">
+								  <div style="background-image: url('assets/images/screens/module_1/aa050-02.jpg')" class="graphic"></div>
+								</div>
+							</div>
+							<div data-ui="nodes" class="node clickable" data-index="2">
+								<div class="node-wrapper">
+									<div class="label-holder">
+									  <h2 class="node-label">
+										Professor Wouter de Maeseneire 
+									  </h2>
+									</div>	
+									<div class="node-content">
+										<div class="primary-text">
+											<p>Wouter is an Associate Professor of Corporate Finance &amp; Partner at Vlerick Business School, where he serves as a Programme Director for the Master in Financial Management and as a Director of Vlerick’s Master programmes. His research mainly focuses on M&amp;A, financing constraints, capital structure, IPOs and company valuation. Wouter obtained his PhD from Erasmus University Rotterdam on the topic of real options, which presents a more accurate valuation methodology capable of capturing the value of management flexibility inherent in risky business projects.</p>
+											<p>Teaching is a passion for Wouter and he teaches extensively on Vlerick’s degree, open and customized programmes, next to lecturing at Rotterdam School of Management and Simon Fraser University in Vancouver. For Vlerick’s large corporate clients, Wouter has lectured in places like Delhi, Texas, Nanjing, Moscow and Bangkok. </p>
+											<p>Wouter enjoys writing cases, and has some cases recognized by the Case Centre. In 2017, he was granted the Case Centre Outstanding Case Teacher Award. Wouter also serves on the Board of Directors of Xior, a listed real estate company investing in student housing, and is on the Advisory Committee of a fintech start-up developing cash forecasting and working capital management software.</p>
+											<p>In terms of hobbies, Wouter loves wining &amp; dining, and enjoys an occasional game of poker or blackjack. He likes sports - in particular soccer and mountain biking. Finally, he hates shopping except for blue shirts, a classic for people in finance.</p>
+										</div>
+									</div>
+								</div>						  
+								<div class="graphic-holder background-graphic">
+								  <div style="background-image: url('assets/images/screens/module_1/aa050-03.jpg')" class="graphic"></div>
+								</div>
+							</div>
+						</div>
 		</div>
-		<div class="top-bar" style="display:none">
-			<div class="cashBox">
-				<div class="cash-box-title">
-					<h3>CASH</h3>
-					<div class="token100">0</div>
-					<div class="token1000">0</div>	
-					<div class="token5000">0</div>	
-				</div>				
-			</div>
-			<div class="page-label">Tutorial</div>
-			<div class="area-info-box-holder">
-				<div class="area-info-title">employees</div>
-				<div class="token-holder">
-					<div class="token100">0</div>
-					<div class="token1000">0</div>
-					<div class="token5000">0</div>
-					<div class="tokenRawMat">0</div>
-					<div class="tokenfinGoods">0</div>
-					<div class="tokenWages">0</div> 
-				</div>
-				<div class="value-total">
-					AREA TOTAL: <span>0</span>
-				</div>
-			</div>	
-			<div class="cash-total">CASH TOTAL: <span>0</span></div>
-			<div class="move-box-holder">
-				<div class="downToggle" data-rot="225"><i class="down"></i></div>
-				<div class="contentStep"></div>
-			</div>
-			<div class="errorMsg">
-				<div>This is not the right location. Try Again.</div>
-			</div>
-			<div class="mouseCursor">													
-				<img src="assets/images/simulation/a1_cur1.svg" width="120px"/>				
-			</div>
-			
-		</div>
-		<div class="postPop" style="display:none">			
-			<div class="postit-container">				
-				<button id="postitClose" class="btn-icon">X</button>
-				<div class="postit-text">Enter an amount to write on the Post It.</div>
-				<input id="postit-input" type="text" name="number"/>				
-				<div class="postit-message">That is not the right amount. Try again.</div>
-				<button id="postitBtn" data-correct="1100" class="btn btn-text clickable post-it-btn">WRITE</button>
-			</div>			
-		</div>
-		<div class="overlayAquasil" style="display:none">
-			<div class="aquasailPop"> 
-				<div class="aquasilInner">
-					
-				</div>
-				<div class="startDiv"><button class="btn-text" id="closePanel">START</button></div>
-				<div class="move-feedback-box-holder"></div>
-			</div>
-		</div>	
-		<div class="preloaderAqua"></div>			
-	</div> 
+	</div>
+	
 </body>
-<script>
-if(isFirefox){
-	setSprite();
-}
-</script>
 </html>

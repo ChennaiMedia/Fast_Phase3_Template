@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Simulation</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="src/screens/m2c2/css/simulation.css" />	
+	<link rel="stylesheet" href="src/screens/m2c2/css/simulation.css" />
+	<link rel="stylesheet" href="src/screens/m2c2/css/style.css">	
 	
 	
 	<script type="text/javascript" src="js/required/jquery.sprite-animator.min.js" async="true" ></script>	
@@ -12,11 +13,11 @@
 	<script type="text/javascript" src="js/required/jquery.ui.touch-punch.min.js"></script>
 	<script type="text/javascript" src="js/required/jquery.preload.js"></script>
 	
+	<!-- <script type="text/javascript" src="js/zoomPan.js"></script> -->
 	<script type="text/javascript" src="src/screens/m2c2/js/aquasailScript.js"></script>		
 	<script type="text/javascript" src="js/required/jquery.transform2d.js"></script>
 	<script type="text/javascript" src="js/required/jquery.transform3d.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script> 
+	<script type="text/javascript" src="src/screens/m2c2/js/script.js"></script>
 	<script>
 	
 	var imgs = [
@@ -168,7 +169,7 @@
 					<div class="token5000">0</div>	
 				</div>				
 			</div>
-			<div class="page-label">Y1-Startup-01</div>
+			<div class="page-label">Tutorial</div>
 			<div class="area-info-box-holder">
 				<div class="area-info-title">employees</div>
 				<div class="token-holder">
@@ -213,7 +214,108 @@
 				<div class="startDiv"><button class="btn-text" id="closePanel">START</button></div>
 				<div class="move-feedback-box-holder"></div>
 			</div>
-		</div>	
+		</div>
+		<div class='overlayWorkbook' style="display:none">
+			<div class="intro-panel">
+				<div class="text-content aquasailPop">
+					<h4 class="title-text">CASH FLOW STATEMENT</h4>
+					<div class="primary-text">
+						<p>Now you need to reflect the ‘money moves’ you have just made in the Aquasail simulation in Aquasail’s financial documents.</p>
+						<p> First you’ll use the Cash Flow Statement. The Cash Flow Statement reflects all cash that flows in and out of Aquasail during a certain time period.</p>
+					</div>         
+					<button data-Id='0' class="btn-text btn-close clickable btn-text">CONTINUE</button>
+				</div>
+			</div>
+			<div class="pop_up animated" style="position: absolute; top: 20px; left: 57px">
+				<div class="pop_up_container" style="width: 300px; padding: 24px;">
+					<div class="pop_up_content">	
+						<h3 class="pop_up_title">WORKBOOK OVERLAY</h3>
+						<div class="pop_up_content primary-text">Throughout the course, you may need to access previous pages of the Workbook in order to complete calculations. Do this by clicking the Workbook icon and selecting the page and year needed.</div>
+					</div>
+				</div>
+				<div class="arrow-container up">
+					<div class="arrow-border"></div>
+					<div class="arrow"></div>
+				</div>
+			</div>
+			<div class="question workbook">
+					
+					<div id="workbook2_Heading" style="">STARTING CASH STARTUP: 0</div>
+					<div id="workbook2_child0" style=""> 
+						<!-- <h1>TUTORIAL: BALANCE SHEET</h1>  -->
+						<div class="headitems"> 
+							<div class="celldivider"></div> 
+							<span class="item">CASH FLOW</span> 
+							<span class="item">CASH BALANCE</span> 
+						</div> 
+						<div class="subitem1"> 
+							<span class="item">Shareholders</span>
+							<span class="item">
+								<span class="numbers90 "><input type="number" step="100" class="workbook-input numbers" data-itemindex="0"></span>
+							</span> 
+							<span class="item">
+								<span class="numbers90 autoFill"></span>
+							</span> 
+						</div> 
+					</div>
+					<button data-ui="submit" class="submit btn-text clickable disabled">SUBMIT</button>
+					<div data-region="feedback" class="feedback-holder"></div>
+			</div>
+			
+			<div class="question workbook question1">
+					<div data-ui="infoBox" class="info-overlay">
+						  <div class="question-primary-text"><p>Complete the first Balance sheet to reflect the 14000 Cash and 14000 Equity Capital now in Aquasail.</p></div>
+					</div>
+					
+					<div id="workbook2_child0" style=""> 
+						<!-- <h1>TUTORIAL: BALANCE SHEET</h1>  -->
+						<div class="headitems"> 
+							<div class="celldivider"></div> 
+							<span class="item">ASSETS</span> 
+							<span class="item">EQUITY &amp; LIABILITIES</span> 
+						</div> 
+						<div class="subitem1"> 
+							<!-- <div class="celldivider1"></div> 
+							<div class="celldivider2"></div>  -->
+							<span class="item">Cash</span>
+							<span class="item">
+								<span class="numbers90 "><input type="number" step="100" class="balancesheet-input numbers" data-itemindex="0"></span>
+							</span> 
+							<span class="item">Equity Capital</span> 
+							<span class="item">
+								<span class="numbers90 "><input type="number" step="100" class="balancesheet-input numbers" data-itemindex="1"></span>
+							</span> 
+						</div> 
+						<div class="subitem2"> 
+							<div class="celldivider"></div>
+							<span class="item">Total Assets</span> 
+							<span class="item">
+								<span class="numbers90  boldLato autoFill" data-itemindex="0"><!-- <input type="number" step="100" class="workbook-input numbers" data-itemindex="2"> --></span>
+							</span>
+							<span class="item">Total Equity &amp; Liabilities</span> 
+							<span class="item">
+								<span class="numbers90  boldLato autoFill" data-itemindex="1"><!-- <input type="number" step="100" class="workbook-input numbers" data-itemindex="3"> --></span>
+							</span> 
+						</div> 
+					</div>
+					<button data-ui="submit" class="submit btn-text clickable disabled">SUBMIT</button>
+						<div data-region="feedback" class="feedback-holder"></div>
+				
+			</div>
+			
+			
+			<div data-region="feedback" class="feedback-holder">
+				<div class="text-panel">
+					<div class="text-content">
+							<h3 class="title-text">Not Quite</h3>
+							<div class="primary-text"><p>Be sure to indicate the move of 1100 in all fields.</p></div>
+							<button data-ui="close" class="btn-close show clickable btn-icon"></button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
 		<div class="preloaderAqua"></div>			
 	</div> 
 </body>

@@ -5,12 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="js/required/jquery.js"></script>
 	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="src/screens/m2c3/style.css">
-	<script type="text/javascript" src="src/screens/m2c3/script.js"></script>
 	<script type="text/javascript" src="js/required/jquery.preload.js"></script>
+	<script type="text/javascript" src="src/screens/m2c3/script.js"></script>
+	<link rel="stylesheet" href="src/screens/m2c3/style.css">
 	<script>	
 	var imgs = [
-		'assets/images/screens/module_1/Main_Scene.png',			
+		'assets/images/screens/module_2/ba040-01.jpg',		
 	];
 	
 	$.preload(imgs, {
@@ -25,103 +25,34 @@
 </head>
 <body>
 	<div class="activityContainer" style="display:none">
-		<div class="intro-panel">
-			<div class="text-content">
-				<h1 class="title-text">Cash Flow Statement</h1>
-				<div class="primary-text">
-					<p>Now you need to reflect the ‘money moves’ you have just made in the Aquasail simulation in Aquasail’s financial documents. First you’ll use the Cash Flow Statement. The Cash Flow Statement reflects all cash that flows in and out of Aquasail during a certain time period.</p>
-					<p>Update the Cash Statement to show that the first incoming cash is the 14,000 invested by the shareholders.</p>
-					<p><b>Please note: Some workbook screens may require you to scroll in order to view all sections.</b></p>
-				</div>         
-				<button data-Id='0' class="btn-text btn-close clickable btn-text">CONTINUE</button>
+		<div class="content" style="overflow:hidden">
+			<div class="panel holder">
+				<div class="text-content">
+					<h1 class="title-text">Mini-Lecture: Balance Sheet</h1>
+					<div class="directions-text"></div>
+
+					<div class="primary-text">
+						<p>Now we will look at the Balance sheet. The Balance sheet is a picture of Aquasail’s sources of funds, which you find on the right hand side of the document, and its use of funds, which you find on the left-hand side. The balance totals at the right hand side and the left hand side should be equal at all points in time.</p>
+						<p><i>Select the video icon to learn more from one of your Course Leaders.</i></p>
+					</div>
+					<svg class="svg-angle" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 170.3 517.9" preserveAspectRatio="none">
+					<path fill="#981d97" d="M0 0v517.9L170.3 0z"></path>
+					</svg>
+				</div>
+				<button data-ui="startVideo" class="clickable video-btn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70">
+					<path d="M53.9 36.1L24.1 53.3c-.6.4-1.4.1-1.7-.5-.1-.2-.2-.4-.2-.6V17.8c0-.7.6-1.3 1.3-1.3.2 0 .4.1.6.2l29.8 17.2c.6.4.8 1.2.5 1.8-.1.1-.3.3-.5.4z" fill="#2a2867"></path>
+					<circle cx="35" cy="35" r="32.5" fill="none" stroke="#2a2867" stroke-width="5" stroke-miterlimit="10"></circle>
+					</svg>
+				</button>
+
 			</div>
 		</div>
-		<div data-ui="movesWrapper" class="moves-box-holder expanded">
-			<div data-ui="toggle" class="btn-icon btn moves-box-toggle clickable">
-				<div class="icon icon-01"></div>
-				<div class="icon icon-02"></div>
-			</div>
-			<div data-ui="movesHolder" class="moves-holder">
-				<h3>RECENT MOVES</h3>
-				<div class="move-holder">				
-					<div class="from-holder">
-						<strong class="from-label"> From: </strong>
-						<span class="from-value">Shareholders</span>
-					</div>
-					<div class="to-holder">
-						<strong class="to-label"> To: </strong>
-						<span class="to-value">Cash</span>
-					</div>
-					<div class="value-holder">
-							<span class="value-total total-value">14,000</span>
-					</div>
-				</div>
-				<div class="move-holder">
-					<div class="to-holder">
-						<strong class="to-label"> To: </strong>
-						<span class="to-value">Equity</span>
-					</div>
-					<div class="value-holder special-value-type">
-						<div class="special-value-icon postit-icon"></div>
-						<div class="value-total total-value">14,000</div>
-					</div>
-				</div>
-			</div>
+		<div class="player" id="jp_jplayer_0" style="width: 480px; height: 360px;">
+			<video id="jp_video_0" preload="metadata" playsinline="true" controls="true" src="assets/videos/ba040-01.mp4" title="" style="width: 480px; height: 360px;" controls="controls" nodownload="noFullWindow">
+				<track kind="subtitles" src="assets/videos/ba040-01.vtt" srclang="en" label="Caption" default>
+			</video>
 		</div>
-				
-			
-				<div class="question workbook">
-					<div data-ui="infoBox" class="info-overlay">
-						  <div class="question-primary-text"><p>Update the cash statement to show that the first incoming cash is the 14000 invested by the shareholders.</p></div>
-					</div>
-					<button data-ui="info" id="info-btn" class="btn-info clickable">i</button>
-					<div id="workbook2_Heading" style="">STARTING CASH STARTUP: 0</div>
-					<div id="workbook2_child0" style=""> 
-						<!-- <h1>TUTORIAL: BALANCE SHEET</h1>  -->
-						<div class="headitems"> 
-							<div class="celldivider"></div> 
-							<span class="item">CASH FLOW</span> 
-							<span class="item">CASH BALANCE</span> 
-						</div> 
-						<div class="subitem1"> 
-							<!-- <div class="celldivider1"></div> 
-							<div class="celldivider2"></div> --> 
-							<span class="item">Shareholders</span>
-							<span class="item">
-								<span class="numbers90 "><input type="number" step="100" class="workbook-input numbers" data-itemindex="0"></span>
-							</span> 
-							<!-- <span class="item">Equity Capital</span>  -->
-							<span class="item">
-								<span class="numbers90 autoFill"><!-- <input type="number" step="100" class="workbook-input numbers" data-itemindex="1"> --></span>
-							</span> 
-						</div> 
-						<!-- <div class="subitem2"> 
-							<div class="celldivider"></div>
-							<span class="item">Total Assets</span> 
-							<span class="item">
-								<span class="numbers90  boldLato autoFill" data-itemindex="0"></span>
-							</span>
-							<span class="item">Total Equity &amp; Liabilities</span> 
-							<span class="item">
-								<span class="numbers90  boldLato autoFill" data-itemindex="1"></span>
-							</span> 
-						</div>  -->
-					</div>
-					<button data-ui="submit" class="submit btn-text clickable disabled">SUBMIT</button>
-						<div data-region="feedback" class="feedback-holder"></div>
-				
-			</div>
-											
-											<div data-region="feedback" class="feedback-holder">
-											<div class="text-panel">
-											<div class="text-content">
-													<h3 class="title-text">Not Quite</h3>
-													<div class="primary-text"><p>Be sure to indicate the move of 1100 in all fields.</p></div>
-													<button data-ui="close" class="btn-close show clickable btn-icon"></button>
-											</div>
-											</div>
-											</div>
-			<div class="overlayDiv"></div>
 	</div>
 	
 </body>

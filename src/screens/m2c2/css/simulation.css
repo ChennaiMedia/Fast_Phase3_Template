@@ -357,7 +357,8 @@ html,body{
     box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.25);
     border-top: 1px solid rgba(0, 0, 0, 0.1);    
     overflow-y: auto;   
-    transition: transform 0.3s;  
+    transition: transform 0.3s; 
+	z-index:1;	
 	display:none;	
 }
 .downToggle{	
@@ -421,6 +422,7 @@ html,body{
     background: url(../../../../assets/images/icon-crosshair.svg) no-repeat center center;
     content: '';
 }
+
 .canvasBase{
 	position:absolute;
 	width:4000px;
@@ -777,7 +779,7 @@ html,body{
 	top:675px;
 	width:362px;
 	height:355px;
-	background-image:url(../../../../assets/images/simulation/bank_sprite.png);
+	background-image:url(../../../../assets/images/simulation/bank_sprite_a3_2.png);
 	background-position:0px 0px;
 }
 #taxsprite_14{
@@ -815,4 +817,16 @@ html,body{
 	height:388px;	
 	background-image:url(../../../../assets/images/simulation/customers_sprite.png);
 	background-position:0px 0px;
+}
+.overlayWorkbook{
+	position:absolute;
+    width: 100%; 
+	height:100%; 
+	display:none;	
+    min-height: 630px;
+    z-index: 0;
+    transform-origin: 50% 50%;
+    align-items: center;
+    justify-content: center;
+	background:rgba(0,0,0,0.0);
 }

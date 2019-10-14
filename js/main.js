@@ -31,6 +31,8 @@ var storedNames;
 var wbookArray = [];
 var aquaPopAnimPos = [9,8,7,6,10,11,12,13,14,15,0,1,2,4,3,5];
 var aquasilVisitPos = 0;
+var globaldefScale = 0.05;
+var globalmaxscale = 0.85;
 //INITIAL SET UP
 $(document).ready(function(){
 	
@@ -121,6 +123,7 @@ function goWindowResize(){
 }
 
 var getStart = function(){
+	$('#btn-aquasail').prop('disabled', false);
 	$('.welcome_container').hide();
 	if(Lesson_location!=''||storedNames!=null){
 	//recover_data(storedNames);
@@ -129,7 +132,7 @@ var getStart = function(){
 	}else{
 		$(".page_holder").load('src/screens/m1c1/index.html');
 	}
-	//all_function()//option delete
+	all_function()//option delete
 }
 /*----------Menu Button Click function----------*/
 var menuBtnClickFun = function(){
@@ -258,6 +261,7 @@ var subMenuClickFun = function(e){
 		chapNo = scrNo; 
 		$('.subMenu_Clickable').removeClass('current_screen');
 		$(this).addClass('current_screen');
+		$('#btn-aquasail').prop('disabled', false);
 		$(".page_holder").empty();
 		$(".page_holder").load('src/screens/m'+modNo+'c'+chapNo+'/index.html');
 		if(!listData[modNo-1].chapters[chapNo-1].StepsCompleted) disableNextBtn();
@@ -281,6 +285,7 @@ var lessonClickFun = function(e){
 		lesNo =	lesScrNo;
 		$('.lesson_Clickable').removeClass('current_screen');
 		$(this).addClass('current_screen');
+		$('#btn-aquasail').prop('disabled', false);
 		$(".page_holder").empty();
 		$(".page_holder").load('src/screens/m'+modNo+'c'+chapNo+'l'+lesNo+'/index.html');
 		if(!listData[modNo-1].chapters[chapNo-1].lessons[lesNo-1].StepsCompleted) disableNextBtn();
@@ -506,8 +511,7 @@ var wbookIcon = function(){
 var setAquasailState = function(){
 	$('.item-holder').css('display','none');	
 	$('.item-holder').each(function(){
-		$(this).removeClass('open');	
-		$(this).find('.minus').css('height','16px').css('background-color','#981d97');
+		$(this).removeClass('open');					
 	});
 }
 
@@ -519,8 +523,7 @@ var runWorkBook = function(){
 	var deactiveClass = (clickedClass == "innerWorkbook")?'aquasail':'innerWorkbook';
 	if(activeClass != clickedClass){		
 		$('.'+deactiveClass).css({'display':'none'});	
-		$('.overlay').css('background','none');	
-		console.log(1)
+		$('.overlay').css('background','none');			
 		$('.'+deactiveClass).stop().animate({  textIndent:0 }, {
 			step: function(now,fx) {
 			  $(this).css('transform','scale('+now+')'); 
@@ -540,9 +543,16 @@ var runWorkBook = function(){
 		$(this).css('transform','scale('+now+')');					
     },
     duration:700,easing:'easeOutExpo',complete:function(){
+		if(activeSetColor!=null) {
+			$('.item-holder').eq(getIndex).find('.minus').css('height','16px').css('background-color',activeSetColor);
+		}
+		if(aquasilVisitPos>0) {			
+			//setRecentAquasail();
+		}		
 		if(setScale == 0) {$('.overlay').css('z-index','0');}	
 		if((activeClass == "aquasail") && (setScale >= 1)){				
 			for(var i=0;i<aquaPopAnimPos.length;i++){
+				$('.item-holder').eq(aquaPopAnimPos[i]).css('display','none');
 				$('.item-holder').eq(aquaPopAnimPos[i]).stop().delay(i*60).fadeIn(150);
 			}
 		}		
@@ -611,42 +621,50 @@ var appendWbookData = function(){
 }
 
 var createAquasail = function(){
+	$('.hotspot-holder').empty();
 	for(var i=0;i<Object.keys(aquaLegends).length;i++)
 		{
 			var legObj = Object.keys(aquaLegends)[i];
-			var lbl = aquaLegends[legObj].txt;			
-			$('.hotspot-holder').append('<div data-ui="item" style="z-index:'+(i+1)+'" class="item-holder clickable global" data-index="0" data-label="'+lbl+'"><div class="item-icon"><span class="plus"></span><span class="minus"></span></div><h4 class="item-label-closed">'+lbl+'</h4><div class="item-content"><h4 class="item-label">'+lbl+'</h4><div class="total-holder"> <span class="total-label"> TOTAL: </span><span class="total-value">0</span></div></div></div>');
+			var lbl = aquaLegends[legObj].txt;				
+			$('.hotspot-holder').append('<div data-ui="item" style="z-index:'+(i+1)+'" data-color="#981d97" class="item-holder clickable global" data-index="0" data-label="'+lbl+'"><div class="item-icon"><span class="plus"></span><span class="minus"></span></div><h4 class="item-label-closed">'+lbl+'</h4><div class="item-content"><h4 class="item-label">'+lbl+'</h4><div class="total-holder"> <span class="total-label"> TOTAL: </span><span class="total-value">0</span></div></div></div>');
 		}
 	$('.item-holder[data-label="Post-it"]').remove();	
-	$(".item-holder").hover(function(event) {		
+	$(".item-holder").hover(function(event) {
+		var setColor = $(this).attr('data-color');	
 		$(this).addClass('over');
 		$(this).not('.open').find('.item-icon').children().stop().animate({backgroundColor:'#fff'}, 300);
+		$(this).not('.open').find('.item-icon').css('background-color', setColor);
 	},function (event) {
-		$(this).removeClass('over');
-		$(this).not('.open').find('.item-icon').children().stop().animate({backgroundColor:'#981d97'}, 300);
+		var setColor = $(this).attr('data-color');		
+		$(this).removeClass('over');		
+		$(this).not('.open').find('.item-icon').children().stop().animate({backgroundColor:setColor}, 300);
+		$(this).not('.open').find('.item-icon').css('background-color','#fff');
 	});
 	$(".item-holder").off('click').on('click', activeAquaPop);
 }
 
+var activeSetColor = null;
+var getIndex = null;
 var activeAquaPop = function(){
-	var ctElem = $(this);	
+	var ctElem = $(this);
+	var setColor = ctElem.attr('data-color');
 	if(!ctElem.hasClass('open')){
-		$('.item-holder').removeClass('open');
-		$('.item-holder').find('.minus').css('height','16px').css('background-color','#981d97');	
+		if(activeSetColor!=null) {
+			$('.item-holder').eq(getIndex).find('.minus').css('height','16px').css('background-color',activeSetColor);
+		}
+		$('.item-holder').removeClass('open');				
 		ctElem.addClass('open');
-		ctElem.find('.item-icon').find('.plus').clearQueue();	
-		ctElem.find('.item-icon').find('.plus').stop().animate({backgroundColor:'#981d97'},300, function(){
-			
-		});		
+		ctElem.find('.item-icon').find('.plus').stop().animate({backgroundColor:setColor},300);
+		ctElem.find('.item-icon').css('background-color','#fff');			
 		ctElem.find('.item-icon').find('.minus').css('height','0px');
+		activeSetColor = setColor;
+		getIndex = ctElem.index();
 	}
 	else{	
-		ctElem.removeClass('open');		
-		ctElem.find('.item-icon').find('.plus').clearQueue();
-		ctElem.find('.item-icon').find('.plus').stop().animate({backgroundColor:'#fff'},300, function(){
-						
-		});
-		ctElem.find('.item-icon').find('.minus').css('height','16px').css('background-color','#fff');
+		ctElem.removeClass('open');	
+		ctElem.find('.item-icon').css('background-color',setColor);		
+		ctElem.find('.item-icon').children().animate({backgroundColor:'#fff'},300);
+		ctElem.find('.item-icon').find('.minus').css('height','16px');
 	}		
 }
 

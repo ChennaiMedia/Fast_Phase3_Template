@@ -115,16 +115,16 @@ html,body{
 	padding-bottom:20px
 }
 .btn-text {
-  min-width: 160px;
-  height: 46px;
-  padding: 0 8px;
-  font: 18px "font-primary", arial;
-  color: #fff;
-  background-color: #000;
-  font-weight: 900;
-  line-height: 100%;
-  -webkit-transition: all 300ms linear;
-  transition: all 300ms linear; }
+	min-width: 160px;
+	height: 46px;
+	padding: 0 8px;
+	font: 18px "font-primary", arial;
+	color: #fff;
+	background-color: #000;
+	font-weight: 900;
+	line-height: 100%;
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear; }
 .btn-text[disabled="true"], .btn-text[disabled], .btn-text.disabled {
     background-color: rgba(0, 0, 0, 0.12);
     color: rgba(0, 0, 0, 0.26);
@@ -357,7 +357,8 @@ html,body{
     box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.25);
     border-top: 1px solid rgba(0, 0, 0, 0.1);    
     overflow-y: auto;   
-    transition: transform 0.3s;  
+    transition: transform 0.3s; 
+	z-index:1;	
 	display:none;	
 }
 .downToggle{	
@@ -380,18 +381,18 @@ html,body{
 	padding-top:10px;
 }
 .downToggle i {
-  border: solid #fff;
-  border-width: 0 4px 4px 0;
-  display: inline-block;
-  padding: 4px;
-  position:relative;
-  left:8px;
-  top:8px;
-  transform:rotate(225deg);  
-  transform-origin:50% 50%;
+	border: solid #fff;
+	border-width: 0 4px 4px 0;
+	display: inline-block;
+	padding: 4px;
+	position:relative;
+	left:8px;
+	top:8px;
+	transform:rotate(225deg);  
+	transform-origin:50% 50%;
 }
 .down {
-  transform: rotate(45deg);  
+	transform: rotate(45deg);  
 }
 .errorMsg{
 	position:absolute;
@@ -421,6 +422,7 @@ html,body{
     background: url(../../../../assets/images/icon-crosshair.svg) no-repeat center center;
     content: '';
 }
+
 .canvasBase{
 	position:absolute;
 	width:4000px;
@@ -448,17 +450,16 @@ html,body{
 }
 
 .cursor-img {
-  display: flex;
-  flex-direction: column;  
-  width: auto;
-  position:absolute;
-  top:0px;
-  left:-30px;
-  height:auto;  
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  
+	display: flex;
+	flex-direction: column;  
+	width: auto;
+	position:absolute;
+	top:0px;
+	left:-30px;
+	height:auto;  
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;  
 }
 .postPop{
 	width: 100%; 
@@ -560,6 +561,15 @@ html,body{
 	display:none;	
 }
 .bankPost img{
+	transform: rotate(-32deg) skewX(-30deg);
+    width: 45px;
+}
+.equityPost{
+	position:absolute;
+	top:1286px;
+	left:1775px;		
+}
+.equityPost img{
 	transform: rotate(-32deg) skewX(-30deg);
     width: 45px;
 }
@@ -759,7 +769,7 @@ html,body{
 	top:820px;
 	width:368px;
 	height:359px;
-	background-image:url(../../../../assets/images/simulation/shareholds_sprite.png);
+	background-image:url(../../../../assets/images/simulation/shareholds_sprite_a2.png);
 	background-position:0px 0px;
 }
 #banksprite_13{
@@ -768,7 +778,7 @@ html,body{
 	top:675px;
 	width:362px;
 	height:355px;
-	background-image:url(../../../../assets/images/simulation/bank_sprite.png);
+	background-image:url(../../../../assets/images/simulation/bank_sprite_a3_2.png);
 	background-position:0px 0px;
 }
 #taxsprite_14{
@@ -806,4 +816,16 @@ html,body{
 	height:388px;	
 	background-image:url(../../../../assets/images/simulation/customers_sprite.png);
 	background-position:0px 0px;
+}
+.overlayWorkbook{
+	position:absolute;
+    width: 100%; 
+	height:100%; 
+	display:none;	
+    min-height: 630px;
+    z-index: 0;
+    transform-origin: 50% 50%;
+    align-items: center;
+    justify-content: center;
+	background:rgba(0,0,0,0.0);
 }

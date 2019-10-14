@@ -727,8 +727,7 @@ div .page_holder{
     -webkit-transform: translateX(-45%);
     -ms-transform: translateX(-45%);
     transform: translateX(-45%);
-    color: #000;
-    font-weight: 900;
+    color: #000;    
     text-align: center;
     font-size: 10px;
     line-height: 110%;
@@ -805,7 +804,7 @@ div .page_holder{
     height: 4px;
 }
 .global.over:not(.open) .item-icon {
-  background-color: #981d97 !important; 
+  background-color: #981d97; 
 }
 
 .item-holder.open .item-content {
@@ -983,7 +982,32 @@ div .page_holder{
 	height:16px;
 	background-color:#981d97;
 }
-
+.special-holder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 6px;
+  background-color: #eee;
+  font-weight: 900; 
+}
+.postit-icon {	
+    background-image:url('../assets/images/token-i-postit.png');
+	width: 25px;
+	height: 25px;
+	background-position: 100% 100%;
+}
+.special-value{
+	margin-left:8px;
+}
 .workbook-viewer {
     width: 97.6%;
 	height:448px;   

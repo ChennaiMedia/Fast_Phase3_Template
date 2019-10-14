@@ -42,6 +42,18 @@
 						"lessons":[]
 					},
 					{
+						"title":"Aquasail Tutorial",
+						"video":"",
+						"StepsCompleted":false,
+						"lessons":[]
+					},
+					{
+						"title":"Workbook Tutorial",
+						"video":"",
+						"StepsCompleted":false,
+						"lessons":[]
+					},
+					{
 						"title":"Meet the Faculty",
 						"video":"",
 						"StepsCompleted":false,
@@ -61,6 +73,12 @@
 				},
 				{
 					"title":"Aquasail Startup",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Cashflow Statement [Workbook]",
 					"video":"",
 					"StepsCompleted":false,
 					"lessons":[]
@@ -90,6 +108,18 @@
 					"lessons":[]
 				},
 				{
+					"title":"Cashflow Statement: Bank Debt [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Balance Sheet: Bank Debt [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
 					"title":"Sources of Funds",
 					"video":"ba090-01",
 					"StepsCompleted":false,
@@ -97,6 +127,18 @@
 				},
 				{
 					"title":"Aquasail",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Cashflow Statement: Investments [Workbook]",
+					"video":"",
+					"StepsCompleted":false,
+					"lessons":[]
+				},
+				{
+					"title":"Balance Sheet: Investments [Workbook]",
 					"video":"",
 					"StepsCompleted":false,
 					"lessons":[]

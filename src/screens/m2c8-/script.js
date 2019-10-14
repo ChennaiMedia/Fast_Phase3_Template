@@ -3,6 +3,7 @@ var feedback_title=['Not Quite','Enter the Correct Answer','NICE WORK!']
 var feedback_text=["Check the areas highlighted in red and try again. Remember, the cash balance will be the sum of the incoming cash provided by investors and the bank. Equity 14000 + Bank loan 24000 = 38000.","Good try! Select the 'Show Me' button to reveal the correct answers and enter the numbers accordingly.","The second incoming cash is the 24000 provided by the bank. That brings Aquasail's cash balance to 38000."]
 var getAnswet=[];
 var correctAnswer=['24000'];
+
 var cash_bal=14000;
 var clickCount=1;			
 

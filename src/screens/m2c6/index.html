@@ -1,22 +1,327 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Simulation</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script type="text/javascript" src="js/required/jquery.js"></script>
-	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>
-	<link rel="stylesheet" href="src/screens/m2c6/style.css">
-	<script type="text/javascript" src="src/screens/m2c6/script.js"></script>
+	<link rel="stylesheet" href="src/screens/m2c6/css/simulation.css" />
+	<link rel="stylesheet" href="src/screens/m2c6/css/style.css">	
+	
+	<script type="text/javascript" src="js/required/jquery.sprite-animator.min.js" async="true" ></script>	
+	<script type="text/javascript" src="js/required/jquery-ui.min.js"></script>	
+	<script type="text/javascript" src="js/required/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="js/required/jquery.preload.js"></script>
+	
+	<script type="text/javascript" src="src/screens/m2c6/js/aquasailScript.js"></script>		
+	<script type="text/javascript" src="js/required/jquery.transform2d.js"></script>
+	<script type="text/javascript" src="js/required/jquery.transform3d.js"></script>
+	<script type="text/javascript" src="src/screens/m2c6/js/script.js"></script>
+	<script>
+	
+	var imgs = [
+		'assets/images/icon-map.svg',
+		'assets/images/btn-zoom-in.svg',
+		'assets/images/btn-zoom-out.svg',
+		'assets/images/icon-x-black.svg',
+		'assets/images/simulation/vlerick-splash.svg',
+		'assets/images/simulation/canvasBase.svg',	
+		'assets/images/simulation/canvasBase.jpg',
+		'assets/images/simulation/accspay_sprite.png',					
+		'assets/images/simulation/finishedgood_sprite.png',					
+		'assets/images/simulation/asslines1_sprite.png',
+		'assets/images/simulation/asslines2_sprite.png',
+		'assets/images/simulation/asslines3_sprite.png',
+		'assets/images/simulation/asslines4_sprite.png',
+		'assets/images/simulation/rawmaterials_sprite.png',
+		'assets/images/simulation/accsrec_sprite.png',
+		'assets/images/simulation/bank_sprite_a3_1.png',	
+		'assets/images/simulation/bank_sprite_a3_2.png',	
+		'assets/images/simulation/bankdt_sprite.png',	
+		'assets/images/simulation/cash.png',	
+		'assets/images/simulation/employees_sprite.png',	
+		'assets/images/simulation/equiry_sprite.png',
+		'assets/images/simulation/tax_sprite.png',	
+		'assets/images/simulation/post-it.png',	
+		'assets/images/simulation/shareholds_sprite.png',	
+		'assets/images/simulation/shareholds_sprite_a2.png',	
+		'assets/images/simulation/suppliers_sprite.png',
+		'assets/images/simulation/services_sprite.png',
+		'assets/images/simulation/propagent_sprite.png',
+		'assets/images/simulation/customers_sprite.png',
+		'assets/images/simulation/postit-1100.jpg',
+		'assets/images/simulation/bg-post-it.svg',
+		'assets/images/simulation/a3_cur1.svg',
+		'assets/images/simulation/a3_post.svg',
+		'assets/images/simulation/token100.png',
+		'assets/images/simulation/token1000.png',
+		'assets/images/simulation/token5000.png',
+		'assets/images/simulation/maskwallbottom.png',
+		'assets/images/simulation/maskwallLeft.png',
+		'assets/images/simulation/maskwallright.png',
+		'assets/images/simulation/maskwall_4.png',
+		'assets/images/simulation/maskwall_5.png',		
+	];
+	
+	$.preload(imgs, {
+		each: function (count) {
+		   
+		},
+		all: function () {
+			$('.preloaderAqua').stop();			
+			$('.preloaderAqua').delay(500).fadeOut(500, function(){				
+				$('.overlayAquasil').css('display','flex');
+				$('.top-bar').css('display','flex');
+				$('.dummyNav').css('display','none');
+				
+			});
+			var initDelay = window.setTimeout(function(){
+				$('.canvasBase').css('display','block');						
+				canvasResize();					
+				if(!isFirefox) setSprite();
+				$('.canvasClick').load('assets/images/simulation/canvasBase.svg', function(){		
+					$('[data-common="commonSprite"]').on('click', runSprite).off('click');					
+				});
+				$('.canvasBase').on('mousedown',function(e){e.preventDefault();});
+				window.clearTimeout(initDelay);
+			},300);					  
+		}  
+	});			
+</script>
 </head>
 <body>
-	<div class="activityContainer" >
-		 <!-- <div class="content">  -->
-			<div class="player" id="jp_jplayer_0" style="width: 480px; height: 360px;">
-				<video id="jp_video_0" preload="metadata" playsinline="true" autoplay="autoplay" controls="true" src="assets/videos/ba060-01.mp4" title="" style="width: 480px; height: 360px;" controls="controls" nodownload="noFullWindow">
-					<track kind="subtitles" src="assets/videos/ba060-01.vtt" srclang="en" label="Caption">
-				</video>
+	<div class="aquasilCont">		
+		<div class="canvasBase">
+			<img src="assets/images/simulation/canvasBase.jpg" class="simBase"/>				
+				
+			<div id="suplssprite_1"></div>
+			<div id="empssprite_2"></div>
+			<div id="fgwsprite_3"></div>			
+			<div id="asslines2sprite_5"></div>			
+			<div id="asslines4sprite_5"></div>
+			<div id="asslines3sprite_5"></div>			
+			<div id="asslines1sprite_5"></div>			
+			<div class="maskWallPos5">
+				<img src="assets/images/simulation/maskwall_4.png"/>
+				<img src="assets/images/simulation/maskwall_5.png" class="maskimg1"/>				
 			</div>
-		 <!-- </div> -->
-	</div>
+			
+			<div id="rmwsprite_4"></div>			
+			<div id="postsprite_7"></div>
+			
+			<div class="maskWallPos4">
+				<img src="assets/images/simulation/maskwallright.png"/>				
+			</div>
+			<div id="accsrecsprite_11"></div>
+			<div class="maskWallPos3">
+				<img src="assets/images/simulation/maskwallright.png"/>				
+			</div>
+			<div id="equitysprite_10"></div>
+			
+			<div class="maskWallPos2">
+				<img src="assets/images/simulation/maskwallright.png"/>				
+			</div>
+			<div id="bankdtsprite_9"></div>
+			
+			<div class="maskWallPos1">
+				<img src="assets/images/simulation/maskwallright.png"/>				
+			</div>
+			<div id="accspaysprite_8"></div>			
+			
+			
+			<div id="cashsprite_6">
+				<div class="cashCoins">
+					<div class="tray_5000"></div>
+					<div class="tray_1000"></div>				
+					<div class="tray_100"></div>
+				</div>
+			</div>
+			
+			<div id="shareholdssprite_12"></div>
+			<div id="banksprite_13"></div>
+			<div id="taxsprite_14"></div>
+			<div id="servicessprite_15"></div>
+			<div id="propagtsprite_16"></div>
+			<div id="custsprite_17"></div>
+			
+			<div class="maskWallPos">
+				<img src="assets/images/simulation/maskwallbottom.png"/>	
+				<img src="assets/images/simulation/maskwallLeft.png" class="maskimg1"/>	
+			</div>			
+			
+			<div class="bankPost">
+				<img src="assets/images/simulation/postit-1100.jpg" />
+			</div>
+			<div class="equityPost">
+				<img src="assets/images/simulation/postit-14000.jpg" />
+			</div>
+			
+			<div class="legendDis"></div>
+			<div class="canvasClick"></div>
+		</div>
+		<div class="top-bar" style="display:none">
+			<div class="cashBox">
+				<div class="cash-box-title">
+					<h3>CASH</h3>
+					<div class="token100">0</div>
+					<div class="token1000">4</div>	
+					<div class="token5000">2</div>	
+				</div>				
+			</div>
+			<div class="page-label">Y1-Startup-02</div>
+			<div class="area-info-box-holder">
+				<div class="area-info-title">employees</div>
+				<div class="token-holder">
+					<div class="token100">0</div>
+					<div class="token1000">0</div>
+					<div class="token5000">0</div>
+					<div class="tokenRawMat">0</div>
+					<div class="tokenfinGoods">0</div>
+					<div class="tokenWages">0</div> 
+				</div>
+				<div class="value-total">
+					AREA TOTAL: <span>0</span>
+				</div>
+			</div>	
+			<div class="cash-total">CASH TOTAL: <span>14000</span></div>
+			<div class="move-box-holder">
+				<div class="downToggle" data-rot="225"><i class="down"></i></div>
+				<div class="contentStep"></div>
+			</div>
+			<div class="errorMsg">
+				<div>This is not the right location. Try Again.</div>
+			</div>
+			<div class="mouseCursor">													
+				<img src="assets/images/simulation/a1_cur1.svg" width="120px"/>				
+			</div>
+			
+		</div>
+		<div class="postPop" style="display:none">			
+			<div class="postit-container">				
+				<button id="postitClose" class="btn-icon">X</button>
+				<div class="postit-text">Enter an amount to write on the Post It.</div>
+				<input id="postit-input" type="text" name="number"/>				
+				<div class="postit-message">That is not the right amount. Try again.</div>
+				<button id="postitBtn" data-correct="24000" class="btn btn-text clickable post-it-btn">WRITE</button>
+			</div>			
+		</div>
+		<div class="overlayAquasil" style="display:none">
+			<div class="aquasailPop"> 
+				<div class="aquasilInner">
+					
+				</div>
+				<div class="startDiv"><button class="btn-text" id="closePanel">START</button></div>
+				<div class="move-feedback-box-holder"></div>
+			</div>
+		</div>
+		<div class='overlayWorkbook' style="display:none">
+			<div class="intro-panel statementPop">
+				<div class="text-content aquasailPop ">
+					<h4 class="title-text">UPDATE CASH STATEMENT</h4>
+					<div class="primary-text">
+						<p>Now update the Cash Flow Statement to record the 24000 Cash inflow. Record it as Bank Debt. Also update the Cash Balance.</p>
+					</div>         
+					<button data-Id='0' class="btn-text btn-close clickable btn-text">CONTINUE</button>
+				</div>
+			</div>
+			
+			<div class="question workbook cash_statement">
+					
+					<div id="workbook2_Heading" style="">STARTING CASH STARTUP: 0</div>
+					<div id="workbook2_child0" style=""> 
+						<!-- <h1>TUTORIAL: BALANCE SHEET</h1>  -->
+						<div class="headitems"> 
+							<div class="celldivider"></div> 
+							<span class="item">CASH FLOW</span> 
+							<span class="item">CASH BALANCE</span> 
+						</div> 
+						<div class="subitem1"> 
+							<!-- <div class="celldivider1"></div> 
+							<div class="celldivider2"></div> --> 
+							<span class="item">Shareholders</span>
+							<span class="item">
+								<span class="numbers90 static">14000</span>
+							</span> 
+							<!-- <span class="item">Equity Capital</span>  -->
+							<span class="item">
+								<span class="numbers90 static">14000</span>
+							</span> 
+						</div> 
+						 <div class="subitem1"> 
+							<div class="celldivider"></div>
+							<span class="item">Bank</span> 
+							<span class="item">
+								<span class="numbers90"><input type="number" step="100" class="workbook-input numbers" data-itemindex="0"></span>
+							</span>
+							<!-- <span class="item">Total Equity &amp; Liabilities</span>  -->
+							<span class="item">
+								<span class="numbers90 autoFill" data-itemindex="1"></span>
+							</span> 
+						</div> 
+					</div>
+					<button data-ui="submit" class="submit btn-text clickable disabled">SUBMIT</button>
+					<div data-region="feedback" class="feedback-holder"></div>
+			</div>
+			
+			<div class="question workbook question1 balance_statement">
+					<div data-ui="infoBox" class="info-overlay">
+						  <div class="question-primary-text"><p>Complete the first Balance sheet to reflect the 14000 Cash and 14000 Equity Capital now in Aquasail.</p></div>
+					</div>
+					
+					<div id="workbook2_child0" style=""> 
+						<!-- <h1>TUTORIAL: BALANCE SHEET</h1>  -->
+						<div class="headitems"> 
+							<div class="celldivider"></div> 
+							<span class="item">ASSETS</span> 
+							<span class="item">EQUITY &amp; LIABILITIES</span> 
+						</div> 
+						<div class="subitem1 subitem0"> 
+							<span class="item">
+								<span class="numbers90 static">14000</span>
+							</span> 
+							<span class="item">Equity Capital</span> 
+						</div>  
+						<div class="subitem1"> 
+							<span class="item">Cash</span>
+							<span class="item">
+								<span class="numbers90 "><input type="number" step="100" class="balancesheet-input numbers" data-itemindex="0"></span>
+							</span> 
+							<span class="item">Long Term Liabilities Bank Debt</span> 
+							<span class="item">
+								<span class="numbers90 "><input type="number" step="100" class="balancesheet-input numbers" data-itemindex="1"></span>
+							</span> 
+						</div> 
+						<div class="subitem2"> 
+							<div class="celldivider"></div>
+							<span class="item">Total Assets</span> 
+							<span class="item">
+								<span class="numbers90  boldLato autoFill" data-itemindex="0"></span>
+							</span>
+							<span class="item">Total Equity &amp; Liabilities</span> 
+							<span class="item">
+								<span class="numbers90  boldLato autoFill" data-itemindex="1"></span>
+							</span> 
+						</div> 
+					</div>
+					<button data-ui="submit" class="submit btn-text clickable disabled">SUBMIT</button>
+						<div data-region="feedback" class="feedback-holder"></div>
+				
+			</div>
+			<div data-region="feedback" class="feedback-holder">
+				<div class="text-panel">
+					<div class="text-content">
+							<h3 class="title-text">Not Quite</h3>
+							<div class="primary-text"><p>Be sure to indicate the move of 1100 in all fields.</p></div>
+							<button data-ui="close" class="btn-close show clickable btn-icon"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="preloaderAqua"></div>			
+	</div> 
 </body>
+<script>
+if(isFirefox){
+	setSprite();
+}
+</script>
 </html>
