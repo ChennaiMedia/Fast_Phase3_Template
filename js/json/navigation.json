@@ -8,42 +8,35 @@
 	"modules": [
 		{
 			"modName": "INTRODUCTION",
-			"numOfChapters": 9,
 			"chapters":
 			[
 					{
 						"title":"Warning",
-						"video":"",
 						"StepsCompleted":true,
 						"lessons":[]
 					},
 					{
 						"title":"Getting Started",
-						"video":"aa010-01",
 						"StepsCompleted":false,
 						"lessons":[]
 					},
 					{
 						"title":"Overview",
-						"video":"",
 						"StepsCompleted":false,
 						"lessons":[]
 					},
 					{
 						"title":"What is Ahead",
-						"video":"",
 						"StepsCompleted":false,
 						"lessons":[]
 					},
 					{
 						"title":"How to use this Primer",
-						"video":"",
 						"StepsCompleted":false,
 						"lessons":[]
 					},
 					{
 						"title":"Meet the Faculty",
-						"video":"",
 						"StepsCompleted":false,
 						"lessons":[]
 					}
@@ -51,65 +44,54 @@
 		},
 		{
 			"modName": "STARTUP AQUASAIL",
-			"numOfChapters": 14,
 			"chapters":[
 				{
 					"title":"Introduction",
-					"video":"ba010-01",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Aquasail Startup",
-					"video":"",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Mini-Lecture: Balance Sheet",
-					"video":"ba040-01",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Balance Sheet [Workbook]",
-					"video":"",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Where to Raise Financing",
-					"video":"ba060-01",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Aquasail",
-					"video":"",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Sources of Funds",
-					"video":"ba090-01",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Aquasail",
-					"video":"",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Key Concepts",
-					"video":"",
 					"StepsCompleted":false,
 					"lessons":[]
 				},
 				{
 					"title":"Conclusion",
-					"video":"ba120-01",
 					"StepsCompleted":false,
 					"lessons":[]
 				}
@@ -117,7 +99,6 @@
 		},
 		{
 			"modName": "YEAR 1",
-			"numOfChapters": 4,
 			"chapters":[
 				{
 					"title":"Quarter 1 (Y1Q1)",
@@ -125,22 +106,18 @@
 					"lessons":[
 						{
 							"title":"Introduction",
-							"video":"ca010-01",
 							"StepsCompleted":false
 						},
 						{
 							"title":"Aquasail",
-							"video":"",
 							"StepsCompleted":false
 						},
 						{
 							"title":"Raw Materials [Workbook]",
-							"video":"",
 							"StepsCompleted":false
 						},
 						{
 							"title":"Aquasail",
-							"video":"",
 							"StepsCompleted":false
 						},
 						{

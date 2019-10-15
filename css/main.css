@@ -1866,6 +1866,8 @@ position:relative;
     transition: -webkit-transform 350ms;
     transition: transform 350ms;
     transition: transform 350ms, -webkit-transform 350ms;
+	padding-left: 40px;
+	text-indent: -20px;
 }
 .lesson::before {
     position: relative;

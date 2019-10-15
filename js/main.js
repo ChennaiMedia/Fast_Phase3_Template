@@ -185,7 +185,7 @@ var menuListCreation = function(FWBdata){
 				var temp='m'+i+'c'+j+'l'+k;
 				$('#lesson_list'+i+'_'+j).append('<div id='+temp+' class="lesson"></div>');
 				$("#"+temp).html(listData[i].chapters[j].lessons[k].title);	
-				$('#lesson_list'+i+'_'+j).prev().css({"padding-left":"60px","color":"#00a3ad"}).addClass('lessonHead'+i+'_'+j);
+				$('#lesson_list'+i+'_'+j).prev().css({"padding-left":"60px","color":"#00a3ad"}).addClass('lessonHead lessonHead'+i+'_'+j);
 			}
 		}
 		
@@ -267,7 +267,7 @@ var subMenuClickFun = function(e){
 		if(!listData[modNo-1].chapters[chapNo-1].StepsCompleted) disableNextBtn();
 		else enableNextBtn();
 	}	
-	menuBtnClickFun();	
+	if(!$(this).hasClass('lessonHead'))menuBtnClickFun();	
 }
 
 var lessonClickFun = function(e){
@@ -290,6 +290,8 @@ var lessonClickFun = function(e){
 		$(".page_holder").load('src/screens/m'+modNo+'c'+chapNo+'l'+lesNo+'/index.html');
 		if(!listData[modNo-1].chapters[chapNo-1].lessons[lesNo-1].StepsCompleted) disableNextBtn();
 		else enableNextBtn();
+		
+		menuBtnClickFun();
 }
 
 var hoverClassSetFun = function(){
